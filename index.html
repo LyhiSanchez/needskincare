@@ -1,1547 +1,498 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Needskincare | All Brands One Glow</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-    :root {
-      --cream: #fffaf2;
-      --linen: #f6ecdf;
-      --rose: #e97d98;
-      --rose-deep: #c85573;
-      --clay: #b88470;
-      --sage: #8c9b83;
-      --sage-deep: #56614e;
-      --ink: #312924;
-      --muted: #7d716a;
-      --white: #ffffff;
-      --paper: rgba(255, 255, 255, .74);
-      --line: rgba(49, 41, 36, .12);
-      --line-strong: rgba(49, 41, 36, .2);
-      --shadow: 0 24px 70px rgba(86, 70, 55, .16);
-      --soft-shadow: 0 14px 38px rgba(122, 91, 76, .12);
-      --radius-xl: 32px;
-      --radius-lg: 24px;
-      --radius-md: 18px;
-      --container: min(1120px, calc(100% - 32px));
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    html {
-      background: var(--cream);
-    }
-
-    body {
-      min-height: 100vh;
-      overflow-x: hidden;
-      color: var(--ink);
-      font-family: "Plus Jakarta Sans", sans-serif;
-      background:
-        radial-gradient(circle at 0% 4%, rgba(233, 125, 152, .22), transparent 28%),
-        radial-gradient(circle at 100% 14%, rgba(140, 155, 131, .2), transparent 26%),
-        linear-gradient(135deg, #fffaf2 0%, #fff3ec 48%, #eef2e7 100%);
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: -2;
-      background-image:
-        linear-gradient(rgba(49, 41, 36, .045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(49, 41, 36, .045) 1px, transparent 1px);
-      background-size: 34px 34px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,.8), transparent 74%);
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: -1;
-      background:
-        linear-gradient(90deg, rgba(255,255,255,.55), transparent 16%, transparent 84%, rgba(255,255,255,.55)),
-        repeating-linear-gradient(120deg, rgba(255,255,255,.18) 0 1px, transparent 1px 12px);
-      opacity: .48;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    button,
-    input,
-    textarea {
-      font: inherit;
-    }
-
-    .container {
-      width: var(--container);
-      margin: 0 auto;
-    }
-
-    .serif {
-      font-family: "DM Serif Display", serif;
-      font-weight: 400;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(200, 85, 115, .22);
-      color: var(--rose-deep);
-      background: rgba(255, 255, 255, .58);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      box-shadow: 0 8px 24px rgba(233, 125, 152, .1);
-    }
-
-    .section-head {
-      width: var(--container);
-      margin: 0 auto 28px;
-      text-align: center;
-    }
-
-    .section-head h2 {
-      margin-top: 14px;
-      font-family: "DM Serif Display", serif;
-      font-size: clamp(34px, 10vw, 58px);
-      font-weight: 400;
-      line-height: .94;
-      letter-spacing: -.035em;
-    }
-
-    .section-head p {
-      max-width: 620px;
-      margin: 14px auto 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 50px;
-      padding: 14px 22px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 800;
-      cursor: pointer;
-      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .btn-primary {
-      color: #fff;
-      background: linear-gradient(135deg, var(--rose), var(--rose-deep));
-      box-shadow: 0 16px 32px rgba(200, 85, 115, .28);
-    }
-
-    .btn-secondary {
-      color: var(--ink);
-      background: rgba(255, 255, 255, .62);
-      border-color: var(--line);
-      box-shadow: var(--soft-shadow);
-    }
-
-    /* NAV */
-    nav {
-      position: sticky;
-      top: 12px;
-      z-index: 1000;
-      width: var(--container);
-      margin: 12px auto 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px;
-      border: 1px solid rgba(255,255,255,.8);
-      border-radius: 28px;
-      background: rgba(255, 250, 242, .72);
-      box-shadow: 0 18px 48px rgba(72, 54, 43, .13);
-      backdrop-filter: blur(22px);
-      -webkit-backdrop-filter: blur(22px);
-    }
-
-    .logo-nav {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 76px;
-      height: 56px;
-      border-radius: 20px;
-      overflow: hidden;
-      text-decoration: none;
-      background: linear-gradient(145deg, #fff, #f7e8dc);
-      border: 1px solid rgba(49, 41, 36, .08);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 10px 24px rgba(122, 91, 76, .11);
-    }
-
-    .logo-nav img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      padding: 4px;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .nav-wa {
-      display: none;
-      color: #fff;
-      background: var(--sage-deep);
-      text-decoration: none;
-      border-radius: 999px;
-      padding: 12px 16px;
-      font-size: 13px;
-      font-weight: 800;
-      box-shadow: 0 12px 24px rgba(86, 97, 78, .22);
-    }
-
-    .menu-toggle {
-      width: 48px;
-      height: 48px;
-      border: 1px solid rgba(49, 41, 36, .1);
-      border-radius: 18px;
-      color: var(--ink);
-      background: rgba(255, 255, 255, .68);
-      cursor: pointer;
-    }
-
-    nav ul {
-      position: absolute;
-      top: calc(100% + 10px);
-      left: 0;
-      right: 0;
-      display: none;
-      flex-direction: column;
-      gap: 8px;
-      padding: 12px;
-      list-style: none;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,.82);
-      background: rgba(255, 250, 242, .94);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(22px);
-      -webkit-backdrop-filter: blur(22px);
-    }
-
-    nav ul.show {
-      display: flex;
-    }
-
-    nav ul li a {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 48px;
-      padding: 12px 14px;
-      color: var(--ink);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 800;
-      border-radius: 16px;
-      transition: background .2s ease, color .2s ease;
-    }
-
-    nav ul li a::after {
-      content: "→";
-      color: var(--rose-deep);
-      opacity: .55;
-    }
-
-    nav ul li a:hover {
-      color: var(--rose-deep);
-      background: rgba(233, 125, 152, .1);
-    }
-
-    /* HERO */
-    .hero {
-      position: relative;
-      padding: 54px 0 42px;
-    }
-
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 999px;
-      pointer-events: none;
-      filter: blur(2px);
-      opacity: .8;
-    }
-
-    .hero::before {
-      width: 170px;
-      height: 170px;
-      right: -82px;
-      top: 42px;
-      background: radial-gradient(circle, rgba(233, 125, 152, .28), transparent 68%);
-    }
-
-    .hero::after {
-      width: 140px;
-      height: 140px;
-      left: -70px;
-      bottom: 20px;
-      background: radial-gradient(circle, rgba(140, 155, 131, .28), transparent 70%);
-    }
-
-    .hero-wrap {
-      width: var(--container);
-      margin: 0 auto;
-      display: grid;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .hero-copy {
-      position: relative;
-      z-index: 2;
-      padding-top: 10px;
-    }
-
-    .hero h1 {
-      margin-top: 18px;
-      font-family: "DM Serif Display", serif;
-      font-weight: 400;
-      font-size: clamp(46px, 14vw, 92px);
-      line-height: .88;
-      letter-spacing: -.055em;
-    }
-
-    .hero h1 span {
-      color: var(--rose-deep);
-    }
-
-    .hero p {
-      max-width: 570px;
-      margin-top: 18px;
-      color: var(--muted);
-      line-height: 1.85;
-      font-size: 15px;
-    }
-
-    .hero-cta {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 26px;
-    }
-
-    .hero-note {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-top: 28px;
-    }
-
-    .hero-note span {
-      display: grid;
-      gap: 4px;
-      padding: 12px 10px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, .58);
-      border: 1px solid rgba(255,255,255,.84);
-      box-shadow: 0 10px 24px rgba(122, 91, 76, .08);
-      font-size: 10px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      font-weight: 800;
-    }
-
-    .hero-note strong {
-      color: var(--ink);
-      font-size: 18px;
-      letter-spacing: -.04em;
-      text-transform: none;
-    }
-
-    .hero-panel {
-      position: relative;
-      display: grid;
-      place-items: center;
-      min-height: 390px;
-      padding: 24px;
-      border-radius: 40px;
-      background:
-        linear-gradient(145deg, rgba(255,255,255,.68), rgba(255,255,255,.28)),
-        radial-gradient(circle at 74% 22%, rgba(233,125,152,.2), transparent 32%);
-      border: 1px solid rgba(255,255,255,.9);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .hero-panel::before {
-      content: "";
-      position: absolute;
-      width: 280px;
-      height: 280px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, rgba(233,125,152,.28), rgba(140,155,131,.22));
-      inset: auto -90px -100px auto;
-    }
-
-    .hero-product {
-      position: relative;
-      z-index: 2;
-      width: min(290px, 78vw);
-      aspect-ratio: 1;
-      display: grid;
-      place-items: center;
-      border-radius: 999px;
-      background:
-        radial-gradient(circle at 35% 18%, #fff, transparent 34%),
-        linear-gradient(145deg, #fff7f2, #eadccf);
-      border: 1px solid rgba(255,255,255,.9);
-      box-shadow: inset 0 1px 0 #fff, 0 28px 70px rgba(107, 82, 69, .19);
-    }
-
-    .hero-product img {
-      width: 80%;
-      height: 80%;
-      object-fit: contain;
-      filter: drop-shadow(0 26px 36px rgba(99, 73, 63, .2));
-    }
-
-    .floating-tag {
-      position: absolute;
-      z-index: 3;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .76);
-      border: 1px solid rgba(255,255,255,.9);
-      box-shadow: 0 14px 34px rgba(103, 77, 64, .16);
-      color: var(--ink);
-      font-size: 11px;
-      font-weight: 800;
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-    }
-
-    .floating-tag i {
-      color: var(--rose-deep);
-    }
-
-    .tag-one {
-      top: 24px;
-      left: 18px;
-    }
-
-    .tag-two {
-      right: 18px;
-      bottom: 24px;
-    }
-
-    /* USP */
-    .usp-container {
-      padding: 12px 0 50px;
-    }
-
-    .usp-grid {
-      width: var(--container);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .usp-card {
-      position: relative;
-      min-height: 124px;
-      padding: 18px;
-      border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, .58);
-      border: 1px solid rgba(255,255,255,.86);
-      box-shadow: var(--soft-shadow);
-      overflow: hidden;
-    }
-
-    .usp-card::after {
-      content: "";
-      position: absolute;
-      width: 74px;
-      height: 74px;
-      right: -26px;
-      bottom: -30px;
-      border-radius: 999px;
-      background: rgba(233, 125, 152, .12);
-    }
-
-    .usp-card i {
-      width: 42px;
-      height: 42px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 14px;
-      color: var(--rose-deep);
-      border-radius: 16px;
-      background: #fff;
-      box-shadow: 0 10px 22px rgba(122, 91, 76, .1);
-    }
-
-    .usp-card h4 {
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: -.02em;
-    }
-
-    .usp-card p {
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.55;
-    }
-
-    /* BRAND */
-    .brand-section {
-      padding: 58px 0;
-      background: rgba(255,255,255,.32);
-      border-block: 1px solid rgba(255,255,255,.58);
-    }
-
-    .brand-wrap {
-      width: var(--container);
-      margin: 0 auto;
-      display: grid;
-      gap: 20px;
-    }
-
-    .brand-label {
-      display: grid;
-      gap: 8px;
-      text-align: center;
-    }
-
-    .brand-label h2 {
-      font-family: "DM Serif Display", serif;
-      font-size: clamp(32px, 9vw, 52px);
-      font-weight: 400;
-      line-height: .96;
-      letter-spacing: -.035em;
-    }
-
-    .brand-label p {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .brand-slider-wrap {
-      display: grid;
-      grid-template-columns: 44px 1fr 44px;
-      align-items: center;
-      gap: 10px;
-      min-width: 0;
-    }
-
-    .brand-slider {
-      display: flex;
-      gap: 14px;
-      align-items: stretch;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      scrollbar-width: none;
-      padding: 8px 0;
-    }
-
-    .brand-slider::-webkit-scrollbar {
-      display: none;
-    }
-
-    .brand-item {
-      flex: 0 0 132px;
-      display: grid;
-      place-items: center;
-      min-height: 100px;
-      border-radius: 22px;
-      background: rgba(255,255,255,.64);
-      border: 1px solid rgba(255,255,255,.86);
-      box-shadow: 0 14px 34px rgba(97, 74, 62, .1);
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-
-    .brand-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 40px rgba(97, 74, 62, .14);
-    }
-
-    .brand-item img {
-      width: 78%;
-      height: 68px;
-      object-fit: contain;
-      filter: saturate(.88) contrast(.96);
-    }
-
-    .nav-btn {
-      width: 44px;
-      height: 44px;
-      border: 1px solid rgba(49,41,36,.1);
-      border-radius: 999px;
-      color: var(--ink);
-      background: rgba(255,255,255,.72);
-      cursor: pointer;
-      box-shadow: 0 12px 24px rgba(97, 74, 62, .1);
-      transition: transform .22s ease, background .22s ease;
-    }
-
-    .nav-btn:hover {
-      transform: translateY(-2px);
-      color: #fff;
-      background: var(--rose-deep);
-    }
-
-    /* BEST SELLER */
-    .best-seller {
-      padding: 72px 0;
-    }
-
-    .product-grid {
-      width: var(--container);
-      margin: 0 auto;
-      display: grid;
-      gap: 16px;
-    }
-
-    .product-card {
-      position: relative;
-      display: grid;
-      grid-template-columns: 116px 1fr;
-      gap: 16px;
-      align-items: center;
-      min-height: 180px;
-      padding: 14px;
-      border-radius: 28px;
-      background: rgba(255,255,255,.68);
-      border: 1px solid rgba(255,255,255,.9);
-      box-shadow: var(--soft-shadow);
-      overflow: hidden;
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 22px 48px rgba(94, 70, 58, .16);
-    }
-
-    .product-card::before {
-      content: "Best Seller";
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      color: var(--rose-deep);
-      background: rgba(233, 125, 152, .12);
-      border: 1px solid rgba(233, 125, 152, .2);
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .product-card img {
-      width: 116px;
-      height: 140px;
-      object-fit: contain;
-      border-radius: 22px;
-      background:
-        radial-gradient(circle at 38% 14%, #fff, transparent 36%),
-        linear-gradient(145deg, #fff7f2, #efe1d3);
-      border: 1px solid rgba(255,255,255,.8);
-      padding: 12px;
-    }
-
-    .product-info {
-      display: grid;
-      gap: 10px;
-      padding-right: 4px;
-    }
-
-    .product-card h3 {
-      max-width: 240px;
-      font-size: 15px;
-      line-height: 1.35;
-      font-weight: 800;
-      letter-spacing: -.025em;
-    }
-
-    .product-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .product-meta span {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 6px 8px;
-      border-radius: 999px;
-      color: var(--sage-deep);
-      background: rgba(140, 155, 131, .13);
-      font-size: 10px;
-      font-weight: 800;
-    }
-
-    .price {
-      color: var(--rose-deep);
-      font-size: 19px;
-      font-weight: 900;
-      letter-spacing: -.04em;
-    }
-
-    .btn-wa {
-      width: 100%;
-      min-height: 46px;
-      border: 0;
-      border-radius: 16px;
-      color: #fff;
-      background: linear-gradient(135deg, var(--sage), var(--sage-deep));
-      font-size: 13px;
-      font-weight: 900;
-      cursor: pointer;
-      box-shadow: 0 12px 22px rgba(86, 97, 78, .18);
-      transition: transform .22s ease, box-shadow .22s ease;
-    }
-
-    .btn-wa:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 28px rgba(86, 97, 78, .24);
-    }
-
-    /* CATEGORY */
-    .category-section {
-      padding: 72px 0;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.32), rgba(255,255,255,.14)),
-        radial-gradient(circle at 20% 0%, rgba(140, 155, 131, .16), transparent 38%);
-      border-block: 1px solid rgba(255,255,255,.58);
-    }
-
-    .cat-grid {
-      width: var(--container);
-      margin: 28px auto 0;
-      display: grid;
-      gap: 14px;
-    }
-
-    .cat-box {
-      position: relative;
-      min-height: 238px;
-      display: flex;
-      align-items: flex-end;
-      padding: 18px;
-      border-radius: 30px;
-      overflow: hidden;
-      text-decoration: none;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      border: 1px solid rgba(255,255,255,.82);
-      box-shadow: var(--soft-shadow);
-      isolation: isolate;
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-
-    .cat-box:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow);
-    }
-
-    .cat-box::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      background: rgba(246, 236, 223, .64);
-      backdrop-filter: blur(1px);
-    }
-
-    .cat-box::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background: linear-gradient(to top, rgba(49,41,36,.64), rgba(49,41,36,.14) 46%, rgba(255,255,255,.1));
-    }
-
-    .cat-box h3 {
-      width: 100%;
-      padding: 16px;
-      border-radius: 22px;
-      color: #fff;
-      background: rgba(255,255,255,.18);
-      border: 1px solid rgba(255,255,255,.3);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      font-family: "DM Serif Display", serif;
-      font-size: 30px;
-      font-weight: 400;
-      letter-spacing: -.03em;
-      text-align: center;
-    }
-
-    /* STORY */
-    .story-section {
-      padding: 72px 0;
-    }
-
-    .story-wrap {
-      width: var(--container);
-      margin: 0 auto;
-      display: grid;
-      gap: 16px;
-    }
-
-    .story-card {
-      padding: 26px;
-      border-radius: 32px;
-      background: rgba(255,255,255,.66);
-      border: 1px solid rgba(255,255,255,.86);
-      box-shadow: var(--soft-shadow);
-    }
-
-    .story-card h2 {
-      margin-top: 12px;
-      font-family: "DM Serif Display", serif;
-      font-size: clamp(34px, 9vw, 58px);
-      font-weight: 400;
-      line-height: .98;
-      letter-spacing: -.035em;
-    }
-
-    .story-card p {
-      margin-top: 16px;
-      color: var(--muted);
-      line-height: 1.85;
-      font-size: 14px;
-    }
-
-    .mini-grid {
-      display: grid;
-      gap: 12px;
-    }
-
-    .mini-card {
-      min-height: 150px;
-      padding: 22px;
-      border-radius: 28px;
-      color: #fff;
-      background: linear-gradient(135deg, var(--sage), var(--sage-deep));
-      box-shadow: 0 18px 42px rgba(86, 97, 78, .18);
-    }
-
-    .mini-card:nth-child(2) {
-      background: linear-gradient(135deg, var(--rose), var(--rose-deep));
-      box-shadow: 0 18px 42px rgba(200, 85, 115, .18);
-    }
-
-    .mini-card i {
-      font-size: 24px;
-      margin-bottom: 20px;
-      opacity: .9;
-    }
-
-    .mini-card h3 {
-      font-size: 20px;
-      letter-spacing: -.035em;
-    }
-
-    .mini-card p {
-      margin-top: 8px;
-      color: rgba(255,255,255,.82);
-      line-height: 1.65;
-      font-size: 13px;
-    }
-
-    /* TESTIMONIALS */
-    .testi-section {
-      padding: 72px 0;
-      text-align: center;
-    }
-
-    .testi-container {
-      width: var(--container);
-      margin: 28px auto 0;
-      display: grid;
-      gap: 14px;
-      text-align: left;
-    }
-
-    .testi-card {
-      position: relative;
-      padding: 24px;
-      border-radius: 30px;
-      background: rgba(255,255,255,.64);
-      border: 1px solid rgba(255,255,255,.88);
-      box-shadow: var(--soft-shadow);
-      overflow: hidden;
-    }
-
-    .testi-card::after {
-      content: "“";
-      position: absolute;
-      right: 20px;
-      top: -24px;
-      color: rgba(233, 125, 152, .18);
-      font-family: "DM Serif Display", serif;
-      font-size: 110px;
-      line-height: 1;
-    }
-
-    .stars {
-      display: flex;
-      gap: 4px;
-      color: #d9a441;
-      font-size: 13px;
-    }
-
-    .testi-card p {
-      position: relative;
-      z-index: 1;
-      margin-top: 14px;
-      color: var(--ink);
-      line-height: 1.8;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .testi-card h5 {
-      margin-top: 16px;
-      color: var(--rose-deep);
-      font-size: 13px;
-      font-weight: 900;
-    }
-
-    /* FAQ */
-    .faq-section {
-      padding: 72px 0;
-      background: rgba(255,255,255,.36);
-      border-top: 1px solid rgba(255,255,255,.58);
-    }
-
-    .faq-container {
-      width: var(--container);
-      max-width: 860px;
-      margin: 28px auto 0;
-      display: grid;
-      gap: 12px;
-    }
-
-    details {
-      border-radius: 24px;
-      background: rgba(255,255,255,.7);
-      border: 1px solid rgba(255,255,255,.86);
-      box-shadow: 0 14px 34px rgba(97, 74, 62, .09);
-      overflow: hidden;
-    }
-
-    summary {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 20px;
-      color: var(--ink);
-      list-style: none;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 900;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    summary::after {
-      content: "+";
-      flex: 0 0 auto;
-      width: 32px;
-      height: 32px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      color: #fff;
-      background: var(--rose-deep);
-      font-weight: 800;
-    }
-
-    details[open] summary::after {
-      content: "−";
-    }
-
-    details p {
-      padding: 0 20px 20px;
-      color: var(--muted);
-      line-height: 1.75;
-      font-size: 14px;
-    }
-
-    /* FOOTER */
-    footer {
-      padding: 58px 0 26px;
-      color: #fff;
-      background:
-        radial-gradient(circle at 18% 0%, rgba(233,125,152,.25), transparent 34%),
-        linear-gradient(135deg, #302820, #1f1a17 58%, #2c1d22);
-    }
-
-    .footer-grid {
-      width: var(--container);
-      margin: 0 auto;
-      display: grid;
-      gap: 30px;
-    }
-
-    .footer-brand h2 {
-      font-family: "DM Serif Display", serif;
-      font-size: 42px;
-      font-weight: 400;
-      letter-spacing: -.03em;
-      color: #fff0e8;
-    }
-
-    .footer-brand p,
-    footer p,
-    footer a {
-      color: rgba(255,255,255,.68);
-      line-height: 1.8;
-      font-size: 14px;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .social-links a {
-      width: 44px;
-      height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      color: #fff;
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.14);
-      text-decoration: none;
-      transition: transform .22s ease, background .22s ease;
-    }
-
-    .social-links a:hover {
-      transform: translateY(-3px);
-      background: rgba(233, 125, 152, .38);
-    }
-
-    .footer-title {
-      margin-bottom: 16px;
-      color: #fff;
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .footer-links a {
-      display: block;
-      margin-bottom: 12px;
-      text-decoration: none;
-    }
-
-    .footer-links a:hover {
-      color: #fff;
-    }
-
-    .footer-contact p {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-
-    .copyright {
-      width: var(--container);
-      margin: 34px auto 0;
-      padding-top: 22px;
-      border-top: 1px solid rgba(255,255,255,.12);
-      color: rgba(255,255,255,.46);
-      font-size: 12px;
-      text-align: center;
-    }
-
-    @media (min-width: 560px) {
-      .hero-cta {
-        flex-direction: row;
-      }
-
-      .usp-grid,
-      .cat-grid,
-      .testi-container,
-      .mini-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 820px) {
-      :root {
-        --container: min(1120px, calc(100% - 56px));
-      }
-
-      .menu-toggle {
-        display: none;
-      }
-
-      .nav-wa {
-        display: inline-flex;
-      }
-
-      nav {
-        padding: 12px 14px;
-      }
-
-      nav ul {
-        position: static;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 4px;
-        padding: 0;
-        background: transparent;
-        border: 0;
-        box-shadow: none;
-        backdrop-filter: none;
-      }
-
-      nav ul li a {
-        min-height: auto;
-        padding: 12px 13px;
-        font-size: 13px;
-      }
-
-      nav ul li a::after {
-        content: none;
-      }
-
-      .hero {
-        padding: 76px 0 56px;
-      }
-
-      .hero-wrap {
-        grid-template-columns: minmax(0, 1.06fr) minmax(340px, .94fr);
-        gap: 42px;
-      }
-
-      .hero-panel {
-        min-height: 520px;
-      }
-
-      .hero-product {
-        width: 360px;
-      }
-
-      .tag-one {
-        top: 44px;
-        left: 34px;
-      }
-
-      .tag-two {
-        right: 34px;
-        bottom: 44px;
-      }
-
-      .usp-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .brand-wrap {
-        grid-template-columns: 280px minmax(0, 1fr);
-        align-items: center;
-        gap: 36px;
-      }
-
-      .brand-label {
-        text-align: left;
-      }
-
-      .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .cat-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .cat-box {
-        min-height: 340px;
-      }
-
-      .story-wrap {
-        grid-template-columns: 1.05fr .95fr;
-        align-items: stretch;
-      }
-
-      .story-card {
-        padding: 40px;
-      }
-
-      .testi-container {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .footer-grid {
-        grid-template-columns: 1.6fr .7fr 1fr;
-        gap: 56px;
-      }
-    }
-
-    @media (min-width: 1040px) {
-      .usp-grid {
-        grid-template-columns: repeat(6, 1fr);
-      }
-
-      .product-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .product-card {
-        grid-template-columns: 1fr;
-        min-height: 420px;
-        padding: 20px;
-      }
-
-      .product-card img {
-        width: 100%;
-        height: 210px;
-      }
-
-      .product-info {
-        height: 100%;
-      }
-
-      .product-card h3 {
-        max-width: none;
-        min-height: 44px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Meta tag untuk MENCEGAH browser memaksa Dark Mode -->
+    <meta name="color-scheme" content="light only">
+    <meta name="supported-color-schemes" content="light">
+    
+    <title>Needskincare | Mobile App Glow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* =========================================
+           ANTI-DARK MODE & VARIABLES
+           ========================================= */
+        :root {
+            color-scheme: light; /* Paksa light mode di root */
+            
+            /* Warna Fix (Tidak akan berubah di dark mode) */
+            --glass-bg: rgba(255, 255, 255, 0.35);
+            --glass-bg-solid: #ffffff;
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --glass-shadow: 0 8px 32px 0 rgba(183, 110, 121, 0.15);
+            
+            --rose-gold: #B76E79;
+            --rose-gold-dark: #9A5A63;
+            --text-dark: #2C2325;
+            --text-light: #6B5B5E;
+            --app-bg: #fcf6f7;
+            
+            --radius-md: 16px;
+            --radius-lg: 24px;
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            scroll-behavior: smooth; 
+        }
+
+        /* Latar belakang desktop (abu-abu gelap) untuk menonjolkan frame mobile */
+        body { 
+            background-color: #e5e5e5;
+            display: flex;
+            justify-content: center;
+            color: var(--text-dark);
+        }
+
+        /* =========================================
+           MOBILE APP CONTAINER (Fokus Layout HP)
+           ========================================= */
+        .app-container {
+            width: 100%;
+            max-width: 480px; /* Ukuran standar maksimal layar HP */
+            min-height: 100vh;
+            background-color: var(--app-bg);
+            background-image: 
+                radial-gradient(at 10% 0%, rgba(255, 218, 224, 0.9) 0px, transparent 50%),
+                radial-gradient(at 90% 10%, rgba(240, 220, 255, 0.8) 0px, transparent 50%),
+                radial-gradient(at 100% 90%, rgba(255, 226, 210, 0.9) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(255, 230, 240, 0.9) 0px, transparent 50%);
+            background-attachment: fixed;
+            position: relative;
+            overflow-x: hidden;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* Utilitas Kaca */
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+        }
+
+        .section-padding { padding: 40px 20px; }
+
+        /* =========================================
+           NAVBAR MOBILE
+           ========================================= */
+        nav {
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            padding: 15px 20px; 
+            border-bottom: 1px solid var(--glass-border);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        .logo-nav {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--rose-gold);
+            text-decoration: none;
+            text-shadow: 0 2px 5px rgba(255,255,255,0.8);
+        }
+        .logo-nav span { color: var(--text-dark); }
+
+        .menu-toggle {
+            background: none; border: none; font-size: 22px;
+            color: var(--text-dark); cursor: pointer;
+        }
+
+        /* Overlay Menu Khusus Mobile Frame */
+        .mobile-menu {
+            position: fixed;
+            top: 0; 
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 480px; /* Selaras dengan app-container */
+            height: 100vh;
+            background: rgba(252, 246, 247, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.3s ease;
+        }
+        .mobile-menu.active { opacity: 1; pointer-events: all; }
+        
+        .menu-header {
+            display: flex; justify-content: flex-end; padding-bottom: 30px;
+        }
+        .close-menu { background: none; border: none; font-size: 28px; color: var(--rose-gold); cursor: pointer; }
+
+        .mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 25px; text-align: center; margin-top: 30px;}
+        .mobile-menu ul li a { text-decoration: none; color: var(--text-dark); font-size: 20px; font-weight: 700; }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        .hero {
+            padding: 60px 20px 40px;
+            text-align: center;
+            display: flex; flex-direction: column; align-items: center; gap: 20px;
+        }
+        .hero-text h1 { font-size: 34px; line-height: 1.2; margin-bottom: 15px; font-weight: 800; }
+        .hero-text h1 span { color: var(--rose-gold); }
+        .hero-text p { font-size: 14px; color: var(--text-light); margin-bottom: 25px; line-height: 1.6; }
+        .btn-primary {
+            background: var(--rose-gold); color: white;
+            padding: 14px 30px; border-radius: 50px; text-decoration: none; 
+            font-weight: 700; display: inline-flex; align-items: center; gap: 10px;
+            box-shadow: 0 10px 25px rgba(183, 110, 121, 0.3);
+        }
+        .hero-img { width: 90%; max-width: 300px; margin-top: 20px; }
+        .hero-img img { border-radius: var(--radius-lg); filter: drop-shadow(0 15px 25px rgba(183, 110, 121, 0.2)); }
+
+        /* =========================================
+           USP (3 KOLOM MOBILE)
+           ========================================= */
+        .usp-container { padding: 0 20px; margin-top: 20px; }
+        .usp-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+            padding: 15px; border-radius: var(--radius-md);
+        }
+        .usp-card { text-align: center; padding: 10px 5px; }
+        .usp-card i { 
+            display: flex; align-items: center; justify-content: center;
+            width: 35px; height: 35px; background: rgba(255,255,255,0.7);
+            color: var(--rose-gold); border-radius: 50%; margin: 0 auto 8px; font-size: 16px;
+        }
+        .usp-card h4 { font-size: 10px; font-weight: 700; color: var(--text-dark); }
+
+        /* =========================================
+           BRAND SLIDER (SWIPEABLE)
+           ========================================= */
+        .brand-section { text-align: center; padding: 40px 0; }
+        .brand-label h2 { font-size: 20px; font-weight: 800; margin-bottom: 15px; padding: 0 20px;}
+        .brand-slider { 
+            display: flex; gap: 15px; overflow-x: auto; 
+            scroll-snap-type: x mandatory; padding: 5px 20px 20px;
+            scrollbar-width: none;
+        }
+        .brand-slider::-webkit-scrollbar { display: none; }
+        .brand-item { 
+            flex: 0 0 auto; scroll-snap-align: center;
+            background: rgba(255,255,255,0.5); padding: 10px 20px;
+            border-radius: var(--radius-md); border: 1px solid var(--glass-border);
+            height: 60px; display: flex; align-items: center;
+        }
+        .brand-item img { height: 25px; object-fit: contain; }
+
+        /* =========================================
+           BEST SELLER (2 KOLOM GRID)
+           ========================================= */
+        .section-header { text-align: center; margin-bottom: 25px; }
+        .section-header h2 { font-size: 24px; font-weight: 800; }
+        .section-header p { font-size: 13px; color: var(--text-light); }
+
+        .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        .product-card { 
+            padding: 12px; border-radius: var(--radius-md);
+            text-align: center; display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .product-card img { width: 100%; height: 130px; object-fit: contain; margin-bottom: 12px; border-radius: 12px; }
+        .product-card h3 { 
+            font-size: 13px; margin-bottom: 6px; font-weight: 700; 
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+            height: 32px;
+        }
+        .price { color: var(--rose-gold-dark); font-weight: 800; font-size: 16px; margin-bottom: 12px; }
+        .btn-wa { 
+            width: 100%; padding: 10px; background: var(--rose-gold); color: white; 
+            border: none; border-radius: 10px; font-weight: 700; font-size: 12px;
+        }
+
+        /* =========================================
+           KATEGORI (2 KOLOM)
+           ========================================= */
+        .cat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .cat-box { 
+            height: 140px; border-radius: var(--radius-md); background-size: cover; background-position: center;
+            display: flex; align-items: center; justify-content: center; position: relative; border: 1px solid var(--glass-border);
+        }
+        .cat-box::before { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.2); border-radius: var(--radius-md); }
+        .cat-badge {
+            position: relative; z-index: 2; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(8px);
+            padding: 6px 15px; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .cat-badge h3 { font-weight: 800; font-size: 13px; color: var(--text-dark); margin: 0; }
+
+        /* =========================================
+           TESTIMONI (HORIZONTAL SCROLL)
+           ========================================= */
+        .testi-container { 
+            display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 15px; padding-bottom: 15px;
+            scrollbar-width: none;
+        }
+        .testi-container::-webkit-scrollbar { display: none; }
+        .testi-card { 
+            flex: 0 0 85%; scroll-snap-align: center; padding: 25px 20px;
+            position: relative; text-align: left; border-radius: var(--radius-md);
+        }
+        .testi-card i { color: var(--rose-gold); font-size: 30px; opacity: 0.15; position: absolute; top: 15px; right: 15px; }
+        .testi-card p { font-style: italic; font-size: 13px; margin-bottom: 15px; color: var(--text-light); line-height: 1.5; }
+        .testi-card h5 { font-size: 14px; font-weight: 700; color: var(--text-dark); }
+
+        /* =========================================
+           FAQ
+           ========================================= */
+        .faq-container { margin-top: 20px; }
+        details { 
+            background: rgba(255,255,255,0.6); margin-bottom: 10px; padding: 15px; 
+            border-radius: var(--radius-md); border: 1px solid var(--glass-border); 
+        }
+        summary { font-weight: 700; font-size: 14px; display: flex; justify-content: space-between; align-items: center; outline: none; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '+'; font-size: 20px; font-weight: 900; color: var(--rose-gold); }
+        details[open] summary::after { content: '-'; }
+        details p { margin-top: 10px; font-size: 13px; color: var(--text-light); line-height: 1.5; }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer { 
+            background: var(--glass-bg-solid); padding: 40px 20px 20px; 
+            border-top: 1px solid var(--glass-border); text-align: center;
+        }
+        .footer-brand h2 { color: var(--rose-gold); margin-bottom: 10px; font-size: 24px; }
+        .footer-brand p { font-size: 13px; color: var(--text-light); line-height: 1.6; margin-bottom: 20px; }
+        .social-links { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; }
+        .social-links a { 
+            display: flex; align-items: center; justify-content: center; width: 35px; height: 35px;
+            background: var(--rose-gold); color: white; border-radius: 50%; font-size: 16px;
+        }
+        .footer-contact { font-size: 13px; color: var(--text-light); margin-bottom: 30px; }
+        .footer-contact p { margin-bottom: 8px; }
+        .footer-contact i { color: var(--rose-gold); margin-right: 5px; }
+        .copyright { border-top: 1px solid rgba(0,0,0,0.05); padding-top: 20px; font-size: 11px; color: #999; }
+
+    </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#home" class="logo-nav" aria-label="Needskincare Home">
-      <img src="needskincare-logo.PNG" alt="Needskincare Logo">
-    </a>
+    <!-- BUNGKUSAN APP KHUSUS TAMPILAN MOBILE -->
+    <div class="app-container">
 
-    <ul id="navMenu">
-      <li><a href="#home">Beranda</a></li>
-      <li><a href="#brand">Brand</a></li>
-      <li><a href="#best">Best Seller</a></li>
-      <li><a href="#kategori">Kategori</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
+        <!-- NAVBAR -->
+        <nav>
+            <a href="#" class="logo-nav">Need<span>skincare.</span></a>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
 
-    <div class="nav-actions">
-      <a class="nav-wa" href="https://wa.me/6281293696614" target="_blank" rel="noopener">WhatsApp</a>
-      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Buka menu navigasi"><i class="fas fa-bars"></i></button>
-    </div>
-  </nav>
-
-  <section class="hero" id="home">
-    <div class="hero-wrap">
-      <div class="hero-copy">
-        <span class="eyebrow"><i class="fas fa-sparkles"></i> Beauty Distributor</span>
-        <h1>All Brands,<br><span>One Glow.</span></h1>
-        <p>Distributor skincare & makeup original tangan pertama. Temukan produk favorit untuk kebutuhan pribadi, stok toko, maupun reseller dengan layanan cepat dan pilihan brand yang lengkap.</p>
-        <div class="hero-cta">
-          <a href="#best" class="btn btn-primary">Belanja Sekarang <i class="fas fa-shopping-bag"></i></a>
-          <a href="https://wa.me/6281293696614" target="_blank" rel="noopener" class="btn btn-secondary">Tanya Stok Reseller</a>
+        <!-- FULLSCREEN MENU OVERLAY (TETAP DI DALAM FRAME 480PX) -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="menu-header">
+                <button class="close-menu" onclick="toggleMenu()"><i class="fas fa-times"></i></button>
+            </div>
+            <ul>
+                <li><a href="#home" onclick="toggleMenu()">Beranda</a></li>
+                <li><a href="#brand" onclick="toggleMenu()">Brand</a></li>
+                <li><a href="#best" onclick="toggleMenu()">Best Seller</a></li>
+                <li><a href="#kategori" onclick="toggleMenu()">Kategori</a></li>
+                <li><a href="#faq" onclick="toggleMenu()">FAQ</a></li>
+            </ul>
         </div>
-        <div class="hero-note" aria-label="Highlight Needskincare">
-          <span><strong>100%</strong> Original</span>
-          <span><strong>1st</strong> Hand</span>
-          <span><strong>Fast</strong> Ship</span>
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="hero-text">
+                <h1>All Brands,<br><span>One Glow.</span></h1>
+                <p>Distributor skincare & makeup tangan pertama. Kebutuhan kulit cantikmu dengan layanan kilat.</p>
+                <a href="#best" class="btn-primary">
+                    Belanja Sekarang <i class="fas fa-shopping-bag"></i>
+                </a>
+            </div>
+            <div class="hero-img">
+                <img src="needskincare-logo.PNG" alt="Needskincare Visual">
+            </div>
+        </section>
+
+        <!-- USP -->
+        <div class="usp-container">
+            <div class="usp-grid glass">
+                <div class="usp-card"><i class="fas fa-check-double"></i><h4>Terlengkap</h4></div>
+                <div class="usp-card"><i class="fas fa-percentage"></i><h4>Promo</h4></div>
+                <div class="usp-card"><i class="fas fa-shipping-fast"></i><h4>Cepat</h4></div>
+            </div>
         </div>
-      </div>
 
-      <div class="hero-panel" aria-label="Needskincare visual">
-        <span class="floating-tag tag-one"><i class="fas fa-check-circle"></i> Brand resmi</span>
-        <div class="hero-product">
-          <img src="needskincare-logo.PNG" alt="Needskincare Visual">
-        </div>
-        <span class="floating-tag tag-two"><i class="fas fa-truck"></i> Siap kirim</span>
-      </div>
-    </div>
-  </section>
+        <!-- BRAND SECTION (SWIPE) -->
+        <section class="brand-section" id="brand">
+            <div class="brand-label">
+                <h2>Brand Favorit Kamu</h2>
+            </div>
+            <div class="brand-slider">
+                <div class="brand-item"><img src="skintific-ceremide-mos.png" alt="SKINTIFIC"></div>
+                <div class="brand-item"><img src="wardah-perfect-set.jpg" alt="WARDAH"></div>
+                <div class="brand-item"><img src="g2g-blueberry-mosturizer.png" alt="GLAD 2 GLOW"></div>
+                <div class="brand-item"><img src="azarine-ss-50spf.png" alt="AZARINE"></div>
+                <div class="brand-item"><img src="purbasari-set.png" alt="PURBASARI"></div>
+                <div class="brand-item"><img src="focallure-liptint.png" alt="FOCALLURE"></div>
+                <div class="brand-item"><img src="makarizo-set.png" alt="MAKARIZO"></div>
+            </div>
+        </section>
 
-  <div class="usp-container">
-    <div class="usp-grid">
-      <div class="usp-card"><i class="fas fa-check-double"></i><h4>Terlengkap</h4><p>Banyak pilihan brand favorit.</p></div>
-      <div class="usp-card"><i class="fas fa-magic"></i><h4>Update</h4><p>Produk tren rutin tersedia.</p></div>
-      <div class="usp-card"><i class="fas fa-percentage"></i><h4>Promo</h4><p>Harga ramah untuk stok.</p></div>
-      <div class="usp-card"><i class="fas fa-users"></i><h4>Reseller</h4><p>Cocok untuk jual ulang.</p></div>
-      <div class="usp-card"><i class="fas fa-shipping-fast"></i><h4>Cepat</h4><p>Pesanan diproses kilat.</p></div>
-      <div class="usp-card"><i class="fas fa-heart"></i><h4>Ramah</h4><p>Admin responsif dan jelas.</p></div>
-    </div>
-  </div>
+        <!-- BEST SELLER (2 KOLOM STYLE SHOPEE/TOKOPEDIA) -->
+        <section class="section-padding" id="best">
+            <div class="section-header">
+                <h2>Best Seller Product</h2>
+                <p>Produk laris yang wajib masuk keranjang.</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card glass">
+                    <img src="skintific-ceremide-mos.png" alt="Skintific">
+                    <h3>Skintific 5X Ceramide Moisture Gel</h3>
+                    <span class="price">Rp 109.000</span>
+                    <button class="btn-wa" onclick="order('Skintific 5X Ceramide', '109.000')">Beli via WA</button>
+                </div>
+                <div class="product-card glass">
+                    <img src="g2g-blueberry-mosturizer.png" alt="Glad2Glow">
+                    <h3>Glad2Glow Blueberry Moisture</h3>
+                    <span class="price">Rp 39.000</span>
+                    <button class="btn-wa" onclick="order('Glad2Glow Blueberry', '39.000')">Beli via WA</button>
+                </div>
+                <div class="product-card glass">
+                    <img src="azarine-ss-50spf.png" alt="Azarine">
+                    <h3>Azarine Hydramax-C Sunscreen</h3>
+                    <span class="price">Rp 55.000</span>
+                    <button class="btn-wa" onclick="order('Azarine Sunscreen', '55.000')">Beli via WA</button>
+                </div>
+                <div class="product-card glass">
+                    <img src="focallure-liptint.png" alt="Focallure">
+                    <h3>Focallure Transferproof Lip Tint</h3>
+                    <span class="price">Rp 35.000</span>
+                    <button class="btn-wa" onclick="order('Focallure Lip Tint', '35.000')">Beli via WA</button>
+                </div>
+            </div>
+        </section>
 
-  <section class="brand-section" id="brand">
-    <div class="brand-wrap">
-      <div class="brand-label">
-        <span class="eyebrow">Curated Brands</span>
-        <h2>Brand favorit kamu ada di sini.</h2>
-        <p>Dari skincare harian, makeup, hair care, sampai body care, semua dikurasi agar mudah dicari dan siap dipesan.</p>
-      </div>
+        <!-- KATEGORI (2 KOLOM KOTAK) -->
+        <section class="section-padding" id="kategori" style="padding-top: 10px;">
+            <div class="section-header">
+                <h2>Telusuri Perawatanmu</h2>
+            </div>
+            <div class="cat-grid">
+                <a href="#" class="cat-box" style="background-image: url('wardah-perfect-set.jpg');">
+                    <div class="cat-badge"><h3>Skincare</h3></div>
+                </a>
+                <a href="#" class="cat-box" style="background-image: url('OMG-set.png');">
+                    <div class="cat-badge"><h3>Makeup</h3></div>
+                </a>
+                <a href="#" class="cat-box" style="background-image: url('makarizo-set.png');">
+                    <div class="cat-badge"><h3>Hair Care</h3></div>
+                </a>
+                <a href="#" class="cat-box" style="background-image: url('purbasari-set.png');">
+                    <div class="cat-badge"><h3>Body Care</h3></div>
+                </a>
+            </div>
+        </section>
 
-      <div class="brand-slider-wrap">
-        <button class="nav-btn" onclick="sideScroll('brandSlider', 'left')" aria-label="Geser brand ke kiri"><i class="fas fa-chevron-left"></i></button>
-        <div class="brand-slider" id="brandSlider">
-          <div class="brand-item"><img src="skintific-ceremide-mos.png" alt="SKINTIFIC"></div>
-          <div class="brand-item"><img src="wardah-perfect-set.jpg" alt="WARDAH"></div>
-          <div class="brand-item"><img src="g2g-blueberry-mosturizer.png" alt="GLAD 2 GLOW"></div>
-          <div class="brand-item"><img src="azarine-ss-50spf.png" alt="AZARINE"></div>
-          <div class="brand-item"><img src="purbasari-set.png" alt="PURBASARI"></div>
-          <div class="brand-item"><img src="focallure-liptint.png" alt="FOCALLURE"></div>
-          <div class="brand-item"><img src="makarizo-set.png" alt="MAKARIZO"></div>
-        </div>
-        <button class="nav-btn" onclick="sideScroll('brandSlider', 'right')" aria-label="Geser brand ke kanan"><i class="fas fa-chevron-right"></i></button>
-      </div>
-    </div>
-  </section>
+        <!-- TESTIMONI (SWIPEABLE) -->
+        <section class="section-padding" style="padding-top: 10px;">
+            <div class="section-header">
+                <h2>Kata Mereka</h2>
+            </div>
+            <div class="testi-container">
+                <div class="testi-card glass">
+                    <i class="fas fa-quote-right"></i>
+                    <p>"Harga distributor, buat reseller untungnya lumayan banget! Kualitas ori mantap."</p>
+                    <h5>- Sarah Amelia</h5>
+                </div>
+                <div class="testi-card glass">
+                    <i class="fas fa-quote-right"></i>
+                    <p>"Packing super aman, barang datang mulus. Admin sabar banget melayani konsultasi."</p>
+                    <h5>- Bunga Lestari</h5>
+                </div>
+                <div class="testi-card glass">
+                    <i class="fas fa-quote-right"></i>
+                    <p>"Udah langganan lama, produknya bener-bener ori dan bikin kulit glowing."</p>
+                    <h5>- Putri Indah</h5>
+                </div>
+            </div>
+        </section>
 
-  <section class="best-seller" id="best">
-    <div class="section-head">
-      <span class="eyebrow">Top Picks</span>
-      <h2>Best Seller Product</h2>
-      <p>Produk yang paling sering dicari karena cocok untuk stok pribadi, kebutuhan harian, dan pilihan reseller.</p>
-    </div>
+        <!-- FAQ -->
+        <section class="section-padding" id="faq" style="padding-top: 10px;">
+            <div class="section-header">
+                <h2>Pertanyaan Umum</h2>
+            </div>
+            <div class="faq-container">
+                <details>
+                    <summary>Apakah produk 100% original?</summary>
+                    <p>Tentu! Kami distributor tangan pertama brand resmi. Jaminan uang kembali.</p>
+                </details>
+                <details>
+                    <summary>Berapa lama pengirimannya?</summary>
+                    <p>Pesanan sebelum jam 15.00 diproses hari yang sama. Estimasi 1-3 hari kerja.</p>
+                </details>
+                <details>
+                    <summary>Jika barang rusak di jalan?</summary>
+                    <p>Kirim video unboxing ke admin WA. Kami ganti baru 100% gratis.</p>
+                </details>
+            </div>
+        </section>
 
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="skintific-ceremide-mos.png" alt="Skintific 5X Ceramide Moisture Gel">
-        <div class="product-info">
-          <h3>Skintific 5X Ceramide Moisture Gel</h3>
-          <div class="product-meta"><span><i class="fas fa-shield-alt"></i> Original</span><span><i class="fas fa-box"></i> Ready</span></div>
-          <span class="price">Rp 109.000</span>
-          <button class="btn-wa" onclick="order('Skintific 5X Ceramide Moisture Gel', '109.000')">Beli via WA</button>
-        </div>
-      </div>
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-brand">
+                <h2>Needskincare.</h2>
+                <p>Distributor kecantikan terpercaya untuk brand terbaik kulit impianmu.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/needskincareid"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@needskincareeid"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <p><i class="fas fa-phone-alt"></i> 081293696614</p>
+                <p><i class="fas fa-envelope"></i> @needskincare.id</p>
+                <p><i class="fas fa-map-marker-alt"></i> Cilangkap, Jakarta Timur</p>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Needskincare Indonesia. Designed with Luxury.
+            </div>
+        </footer>
 
-      <div class="product-card">
-        <img src="g2g-blueberry-mosturizer.png" alt="Glad2Glow Blueberry Moisture">
-        <div class="product-info">
-          <h3>Glad2Glow Blueberry Moisture</h3>
-          <div class="product-meta"><span><i class="fas fa-shield-alt"></i> Original</span><span><i class="fas fa-box"></i> Ready</span></div>
-          <span class="price">Rp 39.000</span>
-          <button class="btn-wa" onclick="order('Glad2Glow Blueberry Ceramide Moisturizer', '39.000')">Beli via WA</button>
-        </div>
-      </div>
+    </div> <!-- TUTUP BUNGKUSAN APP -->
 
-      <div class="product-card">
-        <img src="azarine-ss-50spf.png" alt="Azarine Hydramax-C Sunscreen Serum">
-        <div class="product-info">
-          <h3>Azarine Hydramax-C Sunscreen Serum</h3>
-          <div class="product-meta"><span><i class="fas fa-shield-alt"></i> Original</span><span><i class="fas fa-box"></i> Ready</span></div>
-          <span class="price">Rp 55.000</span>
-          <button class="btn-wa" onclick="order('Azarine Hydramax-C Sunscreen Serum SPF50', '55.000')">Beli via WA</button>
-        </div>
-      </div>
+    <script>
+        // Fitur Menu Overlay Khusus Mobile
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+            
+            // Cegah scroll di background saat menu terbuka
+            if(menu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
 
-      <div class="product-card">
-        <img src="focallure-liptint.png" alt="Focallure Transferproof Lip Tint">
-        <div class="product-info">
-          <h3>Focallure Transferproof Lip Tint</h3>
-          <div class="product-meta"><span><i class="fas fa-shield-alt"></i> Original</span><span><i class="fas fa-box"></i> Ready</span></div>
-          <span class="price">Rp 35.000</span>
-          <button class="btn-wa" onclick="order('Focallure Transferproof Lip Tint', '35.000')">Beli via WA</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="category-section" id="kategori">
-    <div class="section-head">
-      <span class="eyebrow">Shop by Routine</span>
-      <h2>Telusuri Perawatanmu</h2>
-      <p>Pilih kategori sesuai kebutuhan supaya proses belanja terasa lebih simpel dan cepat.</p>
-    </div>
-
-    <div class="cat-grid">
-      <a href="#" class="cat-box" style="background-image: url('wardah-perfect-set.jpg');"><h3>Skincare</h3></a>
-      <a href="#" class="cat-box" style="background-image: url('OMG-set.png');"><h3>Makeup</h3></a>
-      <a href="#" class="cat-box" style="background-image: url('makarizo-set.png');"><h3>Hair Care</h3></a>
-      <a href="#" class="cat-box" style="background-image: url('purbasari-set.png');"><h3>Body Care</h3></a>
-    </div>
-  </section>
-
-  <section class="story-section">
-    <div class="story-wrap">
-      <div class="story-card">
-        <span class="eyebrow">Why Needskincare</span>
-        <h2>Belanja beauty product dibuat lebih tenang.</h2>
-        <p>Needskincare membantu customer dan reseller mendapatkan produk kecantikan dengan pengalaman yang lebih jelas: produk original, pilihan brand luas, admin responsif, serta sistem pemesanan yang praktis melalui WhatsApp.</p>
-        <p>Konsep visual website ini dibuat lebih soft, bersih, dan premium agar cocok untuk citra distributor skincare yang terpercaya tetapi tetap terasa dekat dengan pelanggan.</p>
-      </div>
-
-      <div class="mini-grid">
-        <div class="mini-card">
-          <i class="fas fa-store"></i>
-          <h3>Reseller Friendly</h3>
-          <p>Harga dan pilihan produk mendukung kebutuhan stok jual ulang.</p>
-        </div>
-        <div class="mini-card">
-          <i class="fas fa-comments"></i>
-          <h3>Easy Consultation</h3>
-          <p>Tanya stok, harga, dan produk langsung melalui admin WhatsApp.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="testi-section">
-    <div class="section-head">
-      <span class="eyebrow">Customer Notes</span>
-      <h2>Dengarkan Kata Mereka</h2>
-      <p>Review singkat dari pelanggan yang sudah pernah belanja di Needskincare.</p>
-    </div>
-
-    <div class="testi-container">
-      <div class="testi-card">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p>Harganya beneran harga distributor, buat reseller kayak aku untungnya lumayan banget!</p>
-        <h5>Sarah Amelia</h5>
-      </div>
-      <div class="testi-card">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p>Packing super aman, barang datang mulus tanpa cacat. Adminnya juga sabar banget.</p>
-        <h5>Bunga Lestari</h5>
-      </div>
-      <div class="testi-card">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p>Udah langganan di Needskincare dari lama, nggak pernah kecewa sama kualitas barangnya.</p>
-        <h5>Putri Indah</h5>
-      </div>
-    </div>
-  </section>
-
-  <section class="faq-section" id="faq">
-    <div class="section-head">
-      <span class="eyebrow">FAQ</span>
-      <h2>Pertanyaan Umum</h2>
-      <p>Jawaban cepat untuk hal-hal yang biasanya ditanyakan sebelum belanja.</p>
-    </div>
-
-    <div class="faq-container">
-      <details>
-        <summary>Apakah produk 100% original?</summary>
-        <p>Tentu saja. Kami adalah distributor tangan pertama dari brand-brand resmi. Keaslian produk adalah prioritas utama kami.</p>
-      </details>
-      <details>
-        <summary>Berapa lama pengiriman ke rumah saya?</summary>
-        <p>Pesanan diproses di hari yang sama. Pengiriman biasanya memakan waktu 1-3 hari kerja tergantung lokasi Anda.</p>
-      </details>
-      <details>
-        <summary>Bagaimana jika barang yang datang rusak?</summary>
-        <p>Silakan kirimkan video unboxing tanpa jeda. Kami akan membantu pengecekan dan mengganti produk yang rusak sesuai ketentuan.</p>
-      </details>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <h2>Needskincare.</h2>
-        <p>Distributor kecantikan terpercaya yang menghadirkan brand-brand terbaik untuk kulit impianmu. All Brands, One Glow.</p>
-        <div class="social-links">
-          <a href="https://www.instagram.com/needskincareid" target="_blank" rel="noopener" aria-label="Instagram Needskincare"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.tiktok.com/@needskincareeid" target="_blank" rel="noopener" aria-label="TikTok Needskincare"><i class="fab fa-tiktok"></i></a>
-        </div>
-      </div>
-
-      <div class="footer-links">
-        <h4 class="footer-title">Tautan Cepat</h4>
-        <a href="#home">Beranda</a>
-        <a href="#brand">Brand</a>
-        <a href="#best">Best Seller</a>
-        <a href="#faq">FAQ</a>
-      </div>
-
-      <div class="footer-contact">
-        <h4 class="footer-title">Hubungi Kami</h4>
-        <p><i class="fas fa-phone-alt"></i> 081293696614</p>
-        <p><i class="fas fa-envelope"></i> @needskincare.id</p>
-        <p><i class="fas fa-map-marker-alt"></i> Cilangkap, Jakarta Timur</p>
-      </div>
-    </div>
-
-    <div class="copyright">
-      &copy; 2026 Needskincare Indonesia. All Brands One Glow.
-    </div>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('navMenu');
-      menu.classList.toggle('show');
-    }
-
-    document.querySelectorAll('#navMenu a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('navMenu').classList.remove('show');
-      });
-    });
-
-    function sideScroll(id, direction) {
-      const el = document.getElementById(id);
-      const step = 260;
-      el.scrollLeft += (direction === 'left' ? -step : step);
-    }
-
-    function order(name, price) {
-      const msg = `Halo Admin Needskincare! ✨%0ASaya tertarik untuk pesan:%0A%0A*Produk:* ${name}%0A*Harga:* Rp ${price}%0A%0AMohon info selanjutnya ya min! ❤️`;
-      window.open(`https://wa.me/6281293696614?text=${msg}`, '_blank');
-    }
-  </script>
+        // Fitur beli via WhatsApp
+        function order(name, price) {
+            const msg = `Halo Admin Needskincare! ✨%0ASaya pesan:%0A%0A*Produk:* ${name}%0A*Harga:* Rp ${price}%0A%0AMohon totalannya min! ❤️`;
+            window.open(`https://wa.me/6281293696614?text=${msg}`, '_blank');
+        }
+    </script>
 </body>
 </html>
