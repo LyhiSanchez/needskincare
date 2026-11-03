@@ -1,3048 +1,950 @@
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="id" class="scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GWFJNE44BM"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>needskincare — Solusi Cantik & Glowing Harianmu ✨</title>
+    <!-- Tailwind CSS (Lightweight Utility Styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans (Clean, Fast & Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    colors: {
+                        pastel: {
+                            bg: '#FFFDF9',
+                            rose: '#FFE4EC',
+                            roseDark: '#FF85A9',
+                            mint: '#E2F8EE',
+                            mintDark: '#34B37E',
+                            berry: '#EBE8FF',
+                            berryDark: '#7C69EF',
+                            butter: '#FFF5CC',
+                            peach: '#FFE8D9',
+                            ink: '#26232B',
+                            muted: '#6E6A78'
+                        }
+                    }
+                }
+            }
         }
-        gtag('js', new Date());
-
-        gtag('config', 'G-GWFJNE44BM');
     </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Needskincare | Original Beauty Store</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Archivo+Black&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
     <style>
-         :root {
-            --bg: #fff1f7;
-            --ink: #1c1117;
-            --muted: #6e4b5d;
-            --paper: rgba(255, 255, 255, 0.82);
-            --paper-solid: #ffffff;
-            --pink: #ff4fac;
-            --hot-pink: #ff1493;
-            --soft-pink: #ffd1e8;
-            --peach: #ff9d6c;
-            --yellow: #ffe45e;
-            --lime: #baff39;
-            --cyan: #52e4ff;
-            --purple: #9c6bff;
-            --red: #ff3d55;
-            --line: rgba(28, 17, 23, 0.16);
-            --glow: 0 0 32px rgba(255, 79, 172, 0.44);
-            --shadow: 0 28px 70px rgba(130, 26, 78, 0.18);
-            --hard-shadow: 10px 10px 0 rgba(28, 17, 23, 0.92);
-            --radius: 30px;
-            --container: 1180px;
-        }
-        
+        /* Ultra-lightweight Mobile-First CSS */
         * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+            -webkit-tap-highlight-color: transparent;
         }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
         body {
-            min-height: 100vh;
-            color: var(--ink);
-            font-family: "Plus Jakarta Sans", sans-serif;
-            line-height: 1.6;
+            background-color: #FFFDF9;
+            color: #26232B;
             overflow-x: hidden;
-            background: radial-gradient(circle at 8% 12%, rgba(255, 20, 147, 0.25) 0 8%, transparent 9%), radial-gradient(circle at 88% 5%, rgba(82, 228, 255, 0.35) 0 10%, transparent 11%), radial-gradient(circle at 72% 88%, rgba(186, 255, 57, 0.28) 0 11%, transparent 12%), conic-gradient(from 90deg at 50% 50%, rgba(255, 228, 94, .18), rgba(255, 79, 172, .16), rgba(82, 228, 255, .18), rgba(255, 228, 94, .18)), linear-gradient(135deg, #fff1f7 0%, #fff9df 32%, #e8f8ff 64%, #ffe8f3 100%);
-            background-attachment: fixed;
-            cursor: auto;
         }
-        
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            z-index: -4;
-            background: linear-gradient(90deg, rgba(28, 17, 23, .065) 1px, transparent 1px), linear-gradient(rgba(28, 17, 23, .065) 1px, transparent 1px);
-            background-size: 34px 34px;
-            mask-image: radial-gradient(circle, black 0 65%, transparent 95%);
-            pointer-events: none;
-        }
-        
-        body::after {
-            content: "";
-            position: fixed;
-            inset: 0;
-            z-index: -3;
-            opacity: .42;
-            background-image: repeating-linear-gradient(45deg, transparent 0 12px, rgba(255, 79, 172, .10) 12px 15px), repeating-linear-gradient(-45deg, transparent 0 18px, rgba(82, 228, 255, .10) 18px 22px);
-            mix-blend-mode: multiply;
-            pointer-events: none;
-            animation: patternShift 18s linear infinite;
-        }
-        
-        @keyframes patternShift {
-            to {
-                background-position: 220px -180px, -180px 220px;
-            }
-        }
-        
-        body.chaos {
-            --pink: #ff006e;
-            --hot-pink: #fb00ff;
-            --yellow: #fff200;
-            --lime: #00ff85;
-            --cyan: #00e5ff;
-            --purple: #6a00ff;
-            --peach: #ff7b00;
-            animation: backgroundPulse 2.2s linear infinite;
-        }
-        
-        @keyframes backgroundPulse {
-            0%,
-            100% {
-                filter: saturate(1.05) hue-rotate(0deg);
-            }
-            50% {
-                filter: saturate(1.45) hue-rotate(14deg);
-            }
-        }
-        
-         ::selection {
-            background: var(--yellow);
-            color: var(--ink);
-        }
-        
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-        
-        button {
-            font: inherit;
-        }
-        
-        img {
-            display: block;
-            max-width: 100%;
-        }
-        
-        section {
-            position: relative;
-            padding: 88px 18px;
-            isolation: isolate;
-        }
-        
-        .container {
-            width: min(100%, var(--container));
-            margin-inline: auto;
-        }
-        
-        .loading-screen {
-            position: fixed;
-            inset: 0;
-            z-index: 99999;
-            display: grid;
-            place-items: center;
-            background: radial-gradient(circle at 20% 20%, var(--yellow), transparent 28%), radial-gradient(circle at 80% 10%, var(--cyan), transparent 26%), radial-gradient(circle at 50% 90%, var(--pink), transparent 34%), #fff3fb;
-            transition: opacity .55s ease, visibility .55s ease;
-        }
-        
-        .loading-screen.done {
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        .loader-card {
-            width: min(90vw, 560px);
-            border: 4px solid var(--ink);
-            border-radius: 34px;
-            background: var(--paper-solid);
-            padding: 26px;
-            box-shadow: var(--hard-shadow);
-            transform: rotate(-2deg);
-            text-align: center;
-        }
-        
-        .loader-card h1 {
-            font-family: "Archivo Black", sans-serif;
-            font-size: clamp(36px, 8vw, 72px);
-            line-height: .88;
-            letter-spacing: -0.07em;
-            text-transform: uppercase;
-            color: var(--hot-pink);
-            text-shadow: 4px 4px 0 var(--yellow), 8px 8px 0 var(--ink);
-        }
-        
-        .loading-bar {
-            height: 18px;
-            border: 3px solid var(--ink);
-            border-radius: 999px;
-            margin-top: 28px;
-            overflow: hidden;
-            background: var(--soft-pink);
-        }
-        
-        .loading-fill {
-            height: 100%;
-            width: 0%;
-            border-right: 3px solid var(--ink);
-            background: linear-gradient(90deg, var(--lime), var(--cyan), var(--pink), var(--yellow));
-            transition: width .18s ease;
-        }
-        
-        .loader-caption {
-            margin-top: 14px;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: .04em;
-            color: var(--muted);
-        }
-        
-        .scroll-progress {
-            position: fixed;
-            left: 0;
-            top: 0;
-            z-index: 9999;
-            height: 6px;
-            width: 0%;
-            background: linear-gradient(90deg, var(--hot-pink), var(--yellow), var(--cyan), var(--lime));
-            box-shadow: 0 0 24px rgba(255, 20, 147, .75);
-            transform-origin: left center;
-        }
-        
-        .cursor {
+        /* Hide scrollbar for horizontal pill carousels */
+        .no-scrollbar::-webkit-scrollbar {
             display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 99998;
-            width: 24px;
-            height: 24px;
-            border: 3px solid var(--ink);
-            border-radius: 50%;
-            background: var(--yellow);
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            transition: width .18s ease, height .18s ease, background .18s ease, border-radius .18s ease;
-            mix-blend-mode: multiply;
         }
-        
-        .cursor.active {
-            width: 58px;
-            height: 58px;
-            background: var(--cyan);
-            border-radius: 18px;
-        }
-        
-        .cursor-trail {
-            display: none;
-            position: fixed;
-            z-index: 99997;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--hot-pink);
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            opacity: .55;
-            mix-blend-mode: multiply;
-        }
-        
-        .sparkle {
-            position: fixed;
-            z-index: 99996;
-            pointer-events: none;
-            width: 10px;
-            height: 10px;
-            background: var(--spark-color, var(--pink));
-            clip-path: polygon(50% 0%, 62% 36%, 100% 50%, 62% 64%, 50% 100%, 38% 64%, 0% 50%, 38% 36%);
-            animation: sparklePop .7s ease forwards;
-        }
-        
-        @keyframes sparklePop {
-            0% {
-                transform: translate(-50%, -50%) scale(.2) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translate(var(--dx), var(--dy)) scale(1.7) rotate(190deg);
-                opacity: 0;
-            }
-        }
-        
-        .confetti {
-            position: fixed;
-            top: -20px;
-            z-index: 99995;
-            width: 14px;
-            height: 20px;
-            border: 2px solid rgba(28, 17, 23, .75);
-            background: var(--confetti-color);
-            pointer-events: none;
-            animation: confettiFall var(--duration) linear forwards;
-        }
-        
-        @keyframes confettiFall {
-            to {
-                transform: translateY(112vh) translateX(var(--drift)) rotate(860deg);
-                opacity: 0;
-            }
-        }
-        
-        .orb {
-            position: fixed;
-            z-index: -2;
-            width: var(--size);
-            height: var(--size);
-            left: var(--left);
-            top: var(--top);
-            border: 3px solid rgba(28, 17, 23, .12);
-            border-radius: 999px;
-            background: var(--color);
-            filter: blur(.2px);
-            opacity: .58;
-            pointer-events: none;
-            animation: orbMove var(--speed) ease-in-out infinite alternate;
-        }
-        
-        @keyframes orbMove {
-            to {
-                transform: translate3d(var(--x), var(--y), 0) scale(1.12);
-            }
-        }
-        
-        .floating-emoji {
-            position: fixed;
-            z-index: -1;
-            font-size: var(--size);
-            left: var(--left);
-            top: var(--top);
-            filter: drop-shadow(0 12px 18px rgba(100, 25, 65, .18));
-            opacity: .65;
-            pointer-events: none;
-            animation: emojiFloat var(--speed) ease-in-out infinite alternate;
-        }
-        
-        @keyframes emojiFloat {
-            to {
-                transform: translateY(var(--y)) rotate(var(--r));
-            }
-        }
-        
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 500;
-            border-bottom: 2px solid rgba(28, 17, 23, .18);
-            background: rgba(255, 241, 247, 0.74);
-            backdrop-filter: blur(18px) saturate(1.4);
-        }
-        
-        .nav {
-            width: min(100%, var(--container));
-            margin-inline: auto;
-            padding: 12px 18px;
-            display: grid;
-            gap: 12px;
-        }
-        
-        .nav-top {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 14px;
-        }
-        
-        .logo-nav {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 900;
-            letter-spacing: -0.04em;
-        }
-        
-        .logo-nav img {
-            width: 58px;
-            height: 58px;
-            object-fit: contain;
-            border: 3px solid var(--ink);
-            border-radius: 20px;
-            background: var(--paper-solid);
-            box-shadow: 6px 6px 0 var(--ink);
-            animation: logoJelly 4s ease-in-out infinite;
-        }
-        
-        @keyframes logoJelly {
-            0%,
-            100% {
-                transform: rotate(-4deg) scale(1);
-            }
-            40% {
-                transform: rotate(4deg) scale(1.08);
-            }
-            62% {
-                transform: rotate(-2deg) scale(.98);
-            }
-        }
-        
-        .logo-text {
-            display: grid;
-            line-height: 1;
-            font-size: 18px;
-        }
-        
-        .logo-text small {
-            margin-top: 5px;
-            color: var(--hot-pink);
-            font-size: 10px;
-            font-weight: 900;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-        }
-        
-        .nav-tools {
-            display: flex;
-            gap: 9px;
-            align-items: center;
-        }
-        
-        .nav-cta,
-        .menu-button,
-        .motion-button,
-        .chaos-button,
-        .btn-primary,
-        .btn-secondary,
-        .btn-wa,
-        .nav-btn,
-        .modal-close,
-        .mini-action {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 9px;
-            border: 3px solid var(--ink);
-            border-radius: 999px;
-            background: var(--paper-solid);
-            color: var(--ink);
-            box-shadow: 5px 5px 0 var(--ink);
-            cursor: pointer;
-            font-weight: 950;
-            text-transform: uppercase;
-            transition: transform .18s ease, box-shadow .18s ease, background .18s ease, filter .18s ease;
-            will-change: transform;
-        }
-        
-        .nav-cta {
-            min-height: 44px;
-            padding: 0 16px;
-            background: var(--yellow);
-            font-size: 13px;
-            white-space: nowrap;
-        }
-        
-        .menu-button,
-        .motion-button,
-        .chaos-button {
-            min-height: 44px;
-            padding: 0 13px;
-            background: var(--cyan);
-            font-size: 13px;
-        }
-        
-        .chaos-button {
-            background: var(--hot-pink);
-            color: white;
-            text-shadow: 1px 1px 0 rgba(0, 0, 0, .4);
-        }
-        
-        .menu-button {
-            display: none;
-            background: var(--lime);
-        }
-        
-        .nav-cta:hover,
-        .menu-button:hover,
-        .motion-button:hover,
-        .chaos-button:hover,
-        .btn-primary:hover,
-        .btn-secondary:hover,
-        .btn-wa:hover,
-        .nav-btn:hover,
-        .modal-close:hover,
-        .mini-action:hover {
-            transform: translate(5px, 5px) rotate(-1deg);
-            box-shadow: 0 0 0 var(--ink);
-            filter: saturate(1.22);
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 8px;
-            list-style: none;
-            overflow-x: auto;
+        .no-scrollbar {
+            -ms-overflow-style: none;
             scrollbar-width: none;
-            padding: 2px 2px 6px;
         }
-        
-        .nav-links::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .nav-links a {
-            display: inline-flex;
-            min-height: 38px;
-            align-items: center;
-            border: 2px solid rgba(28, 17, 23, .18);
-            border-radius: 999px;
-            background: rgba(255, 255, 255, .68);
-            padding: 0 14px;
-            color: var(--muted);
-            font-size: 13px;
-            font-weight: 850;
-            white-space: nowrap;
-            transition: .2s ease;
-        }
-        
-        .nav-links a.active,
-        .nav-links a:hover {
-            border-color: var(--ink);
-            background: var(--soft-pink);
-            color: var(--hot-pink);
-            box-shadow: 3px 3px 0 var(--ink);
-        }
-        
-        .marquee {
-            position: relative;
-            z-index: 3;
-            overflow: hidden;
-            border-block: 3px solid var(--ink);
-            background: var(--lime);
-            rotate: -1deg;
-            width: 104%;
-            margin-left: -2%;
-        }
-        
-        .marquee-track {
-            display: inline-flex;
-            gap: 38px;
-            min-width: max-content;
-            padding: 12px 0;
-            font-family: "Archivo Black", sans-serif;
-            font-size: clamp(16px, 3vw, 28px);
-            text-transform: uppercase;
-            white-space: nowrap;
-            animation: marquee 18s linear infinite;
-        }
-        
-        @keyframes marquee {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(-50%);
-            }
-        }
-        
-        .hero {
-            min-height: calc(100vh - 92px);
-            padding-top: 64px;
-            padding-bottom: 96px;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 24px 18px;
-            z-index: -1;
-            border: 3px solid rgba(28, 17, 23, .12);
-            border-radius: 46px;
-            background: rgba(255, 255, 255, .34);
-            backdrop-filter: blur(6px);
-            transform: rotate(-.8deg);
-        }
-        
-        .hero-layout {
-            position: relative;
-            display: grid;
-            gap: 36px;
-            align-items: center;
-        }
-        
-        .hero-copy {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            width: fit-content;
-            margin-bottom: 22px;
-            padding: 10px 14px;
-            border: 3px solid var(--ink);
-            border-radius: 999px;
-            background: var(--yellow);
-            box-shadow: 6px 6px 0 var(--ink);
-            color: var(--ink);
-            font-size: 12px;
-            font-weight: 950;
-            letter-spacing: .06em;
-            text-transform: uppercase;
-            animation: bounceTag 2.8s ease-in-out infinite;
-        }
-        
-        @keyframes bounceTag {
-            0%,
-            100% {
-                transform: rotate(-2deg) translateY(0);
-            }
-            50% {
-                transform: rotate(2deg) translateY(-8px);
-            }
-        }
-        
-        h1,
-        h2,
-        h3 {
-            letter-spacing: -0.055em;
-            line-height: .95;
-        }
-        
-        .hero h1 {
-            max-width: 820px;
-            font-family: "Archivo Black", sans-serif;
-            font-size: clamp(48px, 13vw, 132px);
-            font-weight: 900;
-            text-transform: uppercase;
-            color: var(--ink);
-            text-shadow: 4px 4px 0 var(--yellow), 8px 8px 0 var(--hot-pink), 12px 12px 0 rgba(28, 17, 23, .95);
-            transform: rotate(-1deg);
-        }
-        
-        .hero h1 span {
-            display: inline-block;
-            color: var(--hot-pink);
-            animation: gradientText 3.8s linear infinite;
-        }
-        
-        @keyframes gradientText {
-            0%,
-            100% {
-                filter: hue-rotate(0deg) saturate(1.2);
-            }
-            50% {
-                filter: hue-rotate(60deg) saturate(1.8);
-            }
-        }
-        
-        .hero p {
-            max-width: 650px;
-            margin-top: 22px;
-            border-left: 8px solid var(--hot-pink);
-            padding: 14px 0 14px 18px;
-            color: var(--muted);
-            font-size: 16px;
-            font-weight: 650;
-            background: linear-gradient(90deg, rgba(255, 255, 255, .65), transparent);
-        }
-        
-        .hero-actions {
-            display: grid;
-            gap: 12px;
-            margin-top: 28px;
-        }
-        
-        .btn-primary,
-        .btn-secondary,
-        .btn-wa {
-            width: 100%;
-            min-height: 54px;
-            padding: 0 22px;
-            font-size: 13px;
-            border-radius: 18px;
-        }
-        
-        .btn-primary {
-            background: var(--hot-pink);
-            color: white;
-            text-shadow: 1px 1px 0 rgba(0, 0, 0, .35);
-        }
-        
-        .btn-secondary {
-            background: var(--cyan);
-        }
-        
-        .btn-wa {
-            background: var(--lime);
-            min-height: 46px;
-        }
-        
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            max-width: 650px;
-            margin-top: 26px;
-        }
-        
-        .hero-stat {
-            border: 3px solid var(--ink);
-            border-radius: 24px;
-            padding: 16px 12px;
-            background: var(--paper-solid);
-            box-shadow: 6px 6px 0 var(--ink);
-            transform: rotate(var(--r));
-            text-align: center;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .hero-stat::after {
-            content: "";
-            position: absolute;
-            inset: -60% auto auto -80%;
-            width: 70%;
-            height: 220%;
-            transform: rotate(25deg);
-            background: rgba(255, 255, 255, .65);
-            animation: shine 3.8s ease-in-out infinite;
-        }
-        
-        @keyframes shine {
-            0%,
-            60% {
-                left: -90%;
-            }
-            100% {
-                left: 130%;
-            }
-        }
-        
-        .hero-stat strong {
-            display: block;
-            font-family: "Archivo Black", sans-serif;
-            font-size: clamp(24px, 5vw, 40px);
-            line-height: 1;
-            color: var(--hot-pink);
-        }
-        
-        .hero-stat span {
-            display: block;
-            margin-top: 6px;
-            color: var(--muted);
-            font-size: 11px;
-            font-weight: 950;
-            line-height: 1.2;
-            text-transform: uppercase;
-        }
-        
-        .hero-visual {
-            position: relative;
-            display: grid;
-            place-items: center;
-            min-height: 390px;
-            border: 4px solid var(--ink);
-            border-radius: 44px;
-            background: radial-gradient(circle at 20% 18%, var(--yellow), transparent 22%), radial-gradient(circle at 78% 12%, var(--cyan), transparent 23%), radial-gradient(circle at 50% 92%, var(--lime), transparent 26%), repeating-conic-gradient(from 0deg, rgba(255, 79, 172, .25) 0 10deg, transparent 10deg 20deg), var(--soft-pink);
-            box-shadow: var(--hard-shadow);
-            overflow: hidden;
-            transform-style: preserve-3d;
-        }
-        
-        .hero-visual::before,
-        .hero-visual::after {
-            content: "";
-            position: absolute;
-            border: 4px solid var(--ink);
-            background: rgba(255, 255, 255, .35);
-            pointer-events: none;
-        }
-        
-        .hero-visual::before {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            top: -74px;
-            right: -80px;
-            animation: spinBlob 12s linear infinite;
-        }
-        
-        .hero-visual::after {
-            width: 190px;
-            height: 190px;
-            border-radius: 46px;
-            left: -58px;
-            bottom: -58px;
-            transform: rotate(22deg);
-            animation: spinBlob 16s linear infinite reverse;
-        }
-        
-        @keyframes spinBlob {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        
-        .hero-visual img {
-            position: relative;
-            z-index: 4;
-            width: min(66%, 340px);
-            border: 4px solid var(--ink);
-            border-radius: 42px;
-            background: var(--paper-solid);
-            padding: 18px;
-            box-shadow: 12px 12px 0 var(--ink), var(--glow);
-            filter: drop-shadow(0 28px 28px rgba(90, 20, 60, .22));
-            animation: floatProduct 4.4s ease-in-out infinite;
-        }
-        
-        @keyframes floatProduct {
-            0%,
-            100% {
-                transform: translateY(0) rotate(-4deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(5deg);
-            }
-        }
-        
-        .hero-note,
-        .visual-sticker {
-            position: absolute;
-            z-index: 5;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            border: 3px solid var(--ink);
-            border-radius: 999px;
-            background: var(--paper-solid);
-            padding: 10px 13px;
-            color: var(--ink);
-            font-size: 12px;
-            font-weight: 950;
-            box-shadow: 6px 6px 0 var(--ink);
-            text-transform: uppercase;
-        }
-        
-        .hero-note {
-            right: 18px;
-            bottom: 20px;
-            background: var(--lime);
-        }
-        
-        .visual-sticker.one {
-            left: 16px;
-            top: 20px;
-            background: var(--yellow);
-            animation: wiggle 2.7s ease-in-out infinite;
-        }
-        
-        .visual-sticker.two {
-            right: 22px;
-            top: 74px;
-            background: var(--cyan);
-            animation: wiggle 3.1s ease-in-out infinite reverse;
-        }
-        
-        @keyframes wiggle {
-            0%,
-            100% {
-                transform: rotate(-4deg) translateY(0);
-            }
-            50% {
-                transform: rotate(5deg) translateY(-10px);
-            }
-        }
-        
-        .maxi-panel {
-            position: relative;
-            border: 4px solid var(--ink);
-            border-radius: var(--radius);
-            background: rgba(255, 255, 255, .76);
-            box-shadow: var(--hard-shadow);
-            backdrop-filter: blur(14px);
-            overflow: hidden;
-        }
-        
-        .section-header {
-            display: grid;
-            gap: 12px;
-            max-width: 760px;
-            margin: 0 auto 34px;
-            text-align: center;
-        }
-        
-        .section-header .label,
-        .brand-label .label {
-            display: inline-flex;
-            width: fit-content;
-            justify-self: center;
-            align-items: center;
-            gap: 8px;
-            border: 3px solid var(--ink);
-            border-radius: 999px;
-            background: var(--yellow);
-            padding: 8px 12px;
-            box-shadow: 5px 5px 0 var(--ink);
-            color: var(--ink);
-            font-size: 11px;
-            font-weight: 950;
-            letter-spacing: .06em;
-            text-transform: uppercase;
-        }
-        
-        .section-header h2,
-        .brand-label h2,
-        .category-section h2,
-        .testi-section h2,
-        .faq-section h2 {
-            font-family: "Archivo Black", sans-serif;
-            font-size: clamp(34px, 8vw, 76px);
-            font-weight: 900;
-            line-height: .9;
-            text-transform: uppercase;
-            text-shadow: 3px 3px 0 var(--yellow), 6px 6px 0 rgba(255, 79, 172, .65);
-        }
-        
-        .section-header p,
-        .brand-label p {
-            color: var(--muted);
-            font-size: 15px;
-            font-weight: 650;
-        }
-        
-        .usp-section {
-            padding-top: 0;
-            margin-top: -56px;
-            z-index: 8;
-        }
-        
-        .usp-grid {
-            position: relative;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            padding: 16px;
-            border: 4px solid var(--ink);
-            border-radius: 32px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, .76), rgba(255, 255, 255, .45)), repeating-linear-gradient(45deg, rgba(255, 79, 172, .1) 0 14px, transparent 14px 28px);
-            box-shadow: var(--hard-shadow);
-            backdrop-filter: blur(12px);
-        }
-        
-        .usp-card {
-            position: relative;
-            display: grid;
-            gap: 9px;
-            min-height: 128px;
-            padding: 18px 12px;
-            border: 3px solid var(--ink);
-            border-radius: 24px;
-            background: var(--paper-solid);
-            text-align: center;
-            box-shadow: 5px 5px 0 var(--ink);
-            transform: rotate(var(--r));
-            overflow: hidden;
-        }
-        
-        .usp-card::before {
-            content: "";
-            position: absolute;
-            inset: auto -30px -44px auto;
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: var(--bubble);
-            opacity: .8;
-        }
-        
-        .usp-card i {
-            display: inline-grid;
-            place-items: center;
-            width: 48px;
-            height: 48px;
-            margin-inline: auto;
-            border: 3px solid var(--ink);
-            border-radius: 16px;
-            background: var(--bubble);
-            color: var(--ink);
-            box-shadow: 4px 4px 0 var(--ink);
-            font-size: 18px;
-            animation: iconPop 2.6s ease-in-out infinite;
-        }
-        
-        @keyframes iconPop {
-            0%,
-            100% {
-                transform: translateY(0) rotate(-3deg) scale(1);
-            }
-            50% {
-                transform: translateY(-7px) rotate(5deg) scale(1.08);
-            }
-        }
-        
-        .usp-card h4 {
-            font-size: 12px;
-            font-weight: 950;
-            line-height: 1.2;
-            text-transform: uppercase;
-        }
-        
-        .brand-section {
-            background: radial-gradient(circle at 0% 0%, rgba(255, 228, 94, .36), transparent 35%), radial-gradient(circle at 100% 50%, rgba(82, 228, 255, .30), transparent 32%);
-        }
-        
-        .brand-layout {
-            display: grid;
-            gap: 28px;
-            align-items: center;
-        }
-        
-        .brand-label {
-            display: grid;
-            gap: 12px;
-            text-align: center;
-        }
-        
-        .brand-slider-wrap {
-            display: grid;
-            grid-template-columns: 44px minmax(0, 1fr) 44px;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .brand-slider {
-            display: flex;
-            gap: 14px;
-            overflow-x: auto;
-            padding: 10px 6px 14px;
-            scroll-behavior: smooth;
-            scrollbar-width: none;
-            mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
-        }
-        
-        .brand-slider::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .brand-item {
-            position: relative;
-            display: grid;
-            place-items: center;
-            flex: 0 0 146px;
-            height: 96px;
-            border: 3px solid var(--ink);
-            border-radius: 24px;
-            background: var(--paper-solid);
-            box-shadow: 6px 6px 0 var(--ink);
-            transform: rotate(var(--r));
-            overflow: hidden;
-        }
-        
-        .brand-item::before {
-            content: "";
-            position: absolute;
-            inset: -20%;
-            opacity: .65;
-            background: conic-gradient(from var(--angle), var(--pink), var(--yellow), var(--cyan), var(--lime), var(--pink));
-            animation: rotateAngle 4s linear infinite;
-        }
-        
-        .brand-item::after {
-            content: "";
-            position: absolute;
-            inset: 6px;
-            border-radius: 17px;
-            background: var(--paper-solid);
-        }
-        
-        @property --angle {
-            syntax: "<angle>";
-            initial-value: 0deg;
-            inherits: false;
-        }
-        
-        @keyframes rotateAngle {
-            to {
-                --angle: 360deg;
-            }
-        }
-        
-        .brand-item img {
-            position: relative;
-            z-index: 2;
-            max-width: 102px;
-            max-height: 52px;
-            object-fit: contain;
-            filter: saturate(1.1) contrast(1.05);
-            transition: .25s ease;
-        }
-        
-        .brand-item:hover img {
-            transform: scale(1.12) rotate(-3deg);
-        }
-        
-        .nav-btn {
-            width: 44px;
-            height: 44px;
-            background: var(--yellow);
-            border-radius: 16px;
-            font-size: 15px;
-        }
-        
-        .best-seller {
-            background: radial-gradient(circle at 20% 0%, rgba(255, 20, 147, .22), transparent 28%), radial-gradient(circle at 90% 70%, rgba(186, 255, 57, .30), transparent 32%), rgba(255, 255, 255, .42);
-        }
-        
-        .product-toolbar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-            justify-content: center;
-            margin: -8px auto 28px;
-        }
-        
-        .pill-filter {
-            border: 3px solid var(--ink);
-            border-radius: 999px;
-            background: var(--paper-solid);
-            color: var(--ink);
-            padding: 10px 14px;
-            box-shadow: 4px 4px 0 var(--ink);
-            cursor: pointer;
-            font-size: 12px;
-            font-weight: 950;
-            text-transform: uppercase;
-            transition: .18s ease;
-        }
-        
-        .pill-filter.active,
-        .pill-filter:hover {
-            background: var(--hot-pink);
-            color: white;
-            transform: translate(4px, 4px);
-            box-shadow: 0 0 0 var(--ink);
-        }
-        
-        .product-grid {
-            display: grid;
-            gap: 18px;
-        }
-        
-        .product-card {
-            position: relative;
-            display: grid;
-            grid-template-columns: 112px minmax(0, 1fr);
-            gap: 16px;
-            align-items: center;
-            padding: 16px;
-            border: 4px solid var(--ink);
-            border-radius: 30px;
-            background: var(--paper-solid);
-            box-shadow: var(--hard-shadow);
-            transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
-            transform-style: preserve-3d;
-            overflow: hidden;
-        }
-        
-        .product-card::before {
-            content: "";
-            position: absolute;
-            inset: -100% auto auto -80%;
-            width: 80%;
-            height: 260%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .85), transparent);
-            transform: rotate(22deg);
-            transition: left .5s ease;
-            pointer-events: none;
-        }
-        
-        .product-card:hover::before {
-            left: 140%;
-        }
-        
-        .product-card:hover {
-            filter: saturate(1.12);
-        }
-        
-        .product-media {
-            position: relative;
-            display: grid;
-            place-items: center;
-            aspect-ratio: 1;
-            border: 3px solid var(--ink);
-            border-radius: 22px;
-            background: radial-gradient(circle at 25% 20%, var(--yellow), transparent 28%), radial-gradient(circle at 80% 85%, var(--cyan), transparent 32%), var(--soft-pink);
-            overflow: hidden;
-            transform: translateZ(30px);
-        }
-        
-        .product-media img {
-            width: 88%;
-            height: 88%;
-            object-fit: contain;
-            transition: transform .28s ease;
-            filter: drop-shadow(0 18px 16px rgba(90, 20, 60, .18));
-        }
-        
-        .product-card:hover .product-media img {
-            transform: scale(1.13) rotate(-5deg);
-        }
-        
-        .product-info {
-            position: relative;
-            z-index: 2;
-            min-width: 0;
-            transform: translateZ(24px);
-        }
-        
-        .product-card h3 {
-            margin-bottom: 8px;
-            font-size: 15px;
-            font-weight: 950;
-            line-height: 1.23;
-            letter-spacing: -0.035em;
-        }
-        
-        .product-tag {
-            display: inline-flex;
-            margin-bottom: 8px;
-            border: 2px solid var(--ink);
-            border-radius: 999px;
-            background: var(--tag-bg);
-            padding: 5px 9px;
-            color: var(--ink);
-            box-shadow: 3px 3px 0 var(--ink);
-            font-size: 10px;
-            font-weight: 950;
-            text-transform: uppercase;
-        }
-        
-        .price {
-            display: block;
-            margin-bottom: 12px;
-            color: var(--hot-pink);
-            font-family: "Archivo Black", sans-serif;
-            font-size: 20px;
-            font-weight: 900;
-        }
-        
-        .quick-view {
-            margin-top: 8px;
-            border: 0;
-            background: transparent;
-            color: var(--muted);
-            cursor: pointer;
-            font-size: 12px;
-            font-weight: 900;
-            text-decoration: underline;
-            text-decoration-thickness: 2px;
-            text-underline-offset: 4px;
-        }
-        
-        .category-section {
-            background: repeating-linear-gradient(0deg, rgba(255, 255, 255, .14) 0 12px, transparent 12px 24px), radial-gradient(circle at 80% 10%, rgba(255, 228, 94, .42), transparent 31%);
-        }
-        
-        .cat-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            margin-top: 28px;
-        }
-        
-        .cat-box {
-            position: relative;
-            display: flex;
-            align-items: end;
-            min-height: 214px;
-            padding: 14px;
-            border: 4px solid var(--ink);
-            border-radius: 30px;
-            background-color: var(--soft-pink);
-            background-position: center;
-            background-size: cover;
-            overflow: hidden;
-            box-shadow: var(--hard-shadow);
-            transform: rotate(var(--r));
-            transition: transform .25s ease, filter .25s ease;
-            isolation: isolate;
-        }
-        
-        .cat-box::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            z-index: -1;
-            background: radial-gradient(circle at 20% 15%, rgba(255, 228, 94, .65), transparent 34%), linear-gradient(to top, rgba(255, 255, 255, .96), rgba(255, 255, 255, .22));
-            mix-blend-mode: screen;
-        }
-        
-        .cat-box::after {
-            content: attr(data-emoji);
-            position: absolute;
-            top: 12px;
-            right: 16px;
-            font-size: 46px;
-            filter: drop-shadow(4px 4px 0 rgba(255, 255, 255, .65));
-            animation: emojiFloatSmall 3s ease-in-out infinite alternate;
-        }
-        
-        @keyframes emojiFloatSmall {
-            to {
-                transform: translateY(-10px) rotate(10deg);
-            }
-        }
-        
-        .cat-box h3 {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            border: 3px solid var(--ink);
-            border-radius: 999px;
-            background: rgba(255, 255, 255, .88);
-            padding: 12px 14px;
-            box-shadow: 5px 5px 0 var(--ink);
-            font-family: "Archivo Black", sans-serif;
-            font-size: 18px;
-            line-height: 1;
-            text-align: center;
-            text-transform: uppercase;
-            backdrop-filter: blur(10px);
-        }
-        
-        .cat-box:hover {
-            transform: translate(8px, 8px) rotate(0deg) scale(1.02);
-            filter: saturate(1.3);
-        }
-        
-        .testi-section {
-            background: radial-gradient(circle at 10% 10%, rgba(82, 228, 255, .34), transparent 28%), radial-gradient(circle at 88% 55%, rgba(255, 79, 172, .28), transparent 34%), linear-gradient(180deg, rgba(255, 255, 255, .2), rgba(255, 209, 232, .5));
-        }
-        
-        .testi-container {
-            display: grid;
-            gap: 18px;
-            margin-top: 28px;
-        }
-        
-        .testi-card {
-            position: relative;
-            min-height: 246px;
-            padding: 26px 20px 22px;
-            border: 4px solid var(--ink);
-            border-radius: 30px;
-            background: var(--paper-solid);
-            box-shadow: var(--hard-shadow);
-            transform: rotate(var(--r));
-            overflow: hidden;
-        }
-        
-        .testi-card::before {
-            content: "★★★★★";
-            position: absolute;
-            top: 12px;
-            right: 16px;
-            color: var(--yellow);
-            text-shadow: 2px 2px 0 var(--ink);
-            font-size: 17px;
-            letter-spacing: 2px;
-        }
-        
-        .testi-card i {
-            color: var(--hot-pink);
-            font-size: 30px;
-            opacity: .7;
-        }
-        
-        .testi-card p {
-            margin-top: 18px;
-            color: var(--muted);
-            font-size: 14px;
-            font-weight: 650;
-        }
-        
-        .testi-card h5 {
-            display: inline-flex;
-            margin-top: 18px;
-            border: 3px solid var(--ink);
-            border-radius: 999px;
-            background: var(--lime);
-            padding: 7px 11px;
-            box-shadow: 4px 4px 0 var(--ink);
-            font-size: 13px;
-            font-weight: 950;
-            text-transform: uppercase;
-        }
-        
-        .faq-section {
-            background: radial-gradient(circle at 10% 80%, rgba(186, 255, 57, .38), transparent 30%), radial-gradient(circle at 90% 30%, rgba(255, 228, 94, .42), transparent 34%);
-        }
-        
-        .faq-container {
-            display: grid;
-            gap: 14px;
-            max-width: 880px;
-            margin: 28px auto 0;
-        }
-        
-        details {
-            border: 4px solid var(--ink);
-            border-radius: 24px;
-            background: var(--paper-solid);
-            box-shadow: 8px 8px 0 var(--ink);
-            overflow: hidden;
-            transform: rotate(var(--r));
-        }
-        
-        summary {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 18px;
-            padding: 20px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 950;
-            list-style: none;
-            text-transform: uppercase;
-        }
-        
-        summary::-webkit-details-marker {
-            display: none;
-        }
-        
-        summary::after {
-            content: "+";
-            display: grid;
-            place-items: center;
-            flex: 0 0 auto;
-            width: 36px;
-            height: 36px;
-            border: 3px solid var(--ink);
-            border-radius: 12px;
-            background: var(--yellow);
-            box-shadow: 4px 4px 0 var(--ink);
-            color: var(--ink);
-            font-family: "Archivo Black", sans-serif;
-            font-size: 24px;
-            transition: .22s ease;
-        }
-        
-        details[open] summary::after {
-            transform: rotate(45deg);
-            background: var(--hot-pink);
-            color: white;
-        }
-        
-        details p {
-            padding: 0 20px 20px;
-            color: var(--muted);
-            font-size: 14px;
-            font-weight: 650;
-        }
-        
-        .motion-lab {
-            padding-top: 0;
-        }
-        
-        .motion-board {
-            display: grid;
-            gap: 16px;
-            border: 4px solid var(--ink);
-            border-radius: 34px;
-            background: radial-gradient(circle at 20% 30%, rgba(255, 228, 94, .7), transparent 26%), radial-gradient(circle at 90% 20%, rgba(82, 228, 255, .6), transparent 24%), radial-gradient(circle at 60% 90%, rgba(255, 79, 172, .6), transparent 28%), var(--paper-solid);
-            box-shadow: var(--hard-shadow);
-            padding: 20px;
-            overflow: hidden;
-        }
-        
-        .motion-board h2 {
-            font-family: "Archivo Black", sans-serif;
-            font-size: clamp(30px, 7vw, 68px);
-            line-height: .9;
-            text-transform: uppercase;
-            text-shadow: 3px 3px 0 var(--yellow), 6px 6px 0 var(--hot-pink);
-        }
-        
-        .motion-board p {
-            color: var(--muted);
-            font-weight: 700;
-        }
-        
-        .motion-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 8px;
-        }
-        
-        .mini-action {
-            min-height: 46px;
-            padding: 0 14px;
-            border-radius: 16px;
-            background: var(--cyan);
-            font-size: 12px;
-        }
-        
-        .mini-action:nth-child(2) {
-            background: var(--yellow);
-        }
-        
-        .mini-action:nth-child(3) {
-            background: var(--lime);
-        }
-        
-        .mini-action:nth-child(4) {
-            background: var(--hot-pink);
-            color: white;
-        }
-        
-        footer {
-            position: relative;
-            padding: 70px 18px 32px;
-            border-top: 4px solid var(--ink);
-            background: radial-gradient(circle at 18% 22%, rgba(255, 79, 172, .3), transparent 28%), radial-gradient(circle at 84% 70%, rgba(82, 228, 255, .26), transparent 30%), #1c1117;
-            color: #ffffff;
-            overflow: hidden;
-        }
-        
-        footer::before {
-            content: "NEEDSKINCARE NEEDSKINCARE NEEDSKINCARE";
-            position: absolute;
-            left: -2%;
-            top: 18px;
-            width: 120%;
-            color: rgba(255, 255, 255, .06);
-            font-family: "Archivo Black", sans-serif;
-            font-size: clamp(48px, 11vw, 120px);
-            line-height: .8;
-            white-space: nowrap;
-            transform: rotate(-2deg);
-        }
-        
-        .footer-grid {
-            position: relative;
-            z-index: 2;
-            display: grid;
-            gap: 34px;
-            width: min(100%, var(--container));
-            margin-inline: auto;
-        }
-        
-        .footer-brand h2 {
-            margin-bottom: 12px;
-            color: var(--soft-pink);
-            font-family: "Archivo Black", sans-serif;
-            font-size: clamp(34px, 7vw, 66px);
-            line-height: .9;
-            letter-spacing: -0.07em;
-            text-transform: uppercase;
-            text-shadow: 4px 4px 0 var(--hot-pink);
-        }
-        
-        .footer-brand p,
-        .footer-list a,
-        .footer-contact p {
-            color: rgba(255, 255, 255, .74);
-            font-size: 14px;
-            font-weight: 650;
-        }
-        
-        .footer-list,
-        .footer-contact {
-            display: grid;
-            gap: 12px;
-        }
-        
-        .footer-grid h4 {
-            margin-bottom: 8px;
-            font-size: 15px;
-            font-weight: 950;
-            text-transform: uppercase;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 10px;
-            margin-top: 22px;
-        }
-        
-        .social-links a {
-            display: inline-grid;
-            place-items: center;
-            width: 48px;
-            height: 48px;
-            border: 3px solid #ffffff;
-            border-radius: 16px;
-            background: var(--hot-pink);
-            color: white;
-            box-shadow: 5px 5px 0 #ffffff;
-            transition: .18s ease;
-        }
-        
-        .social-links a:hover,
-        .footer-list a:hover {
-            color: var(--yellow);
-            transform: translate(4px, 4px);
-            box-shadow: 0 0 0 #ffffff;
-        }
-        
-        .copyright {
-            position: relative;
-            z-index: 2;
-            width: min(100%, var(--container));
-            margin: 40px auto 0;
-            padding-top: 22px;
-            border-top: 1px solid rgba(255, 255, 255, .14);
-            color: rgba(255, 255, 255, .48);
-            font-size: 12px;
-            text-align: center;
-        }
-        
-        .reveal {
-            opacity: 0;
-            transform: translateY(60px) rotate(-1deg) scale(.97);
-            transition: opacity .75s ease, transform .75s cubic-bezier(.17, .67, .21, 1.08);
-        }
-        
-        .reveal.is-visible {
-            opacity: 1;
-            transform: translateY(0) rotate(0deg) scale(1);
-        }
-        
-        .letter {
-            display: inline-block;
-            opacity: 0;
-            transform: translateY(50px) rotate(14deg) scale(.8);
-            animation: letterIn .8s cubic-bezier(.17, .67, .21, 1.24) forwards;
-            animation-delay: calc(var(--i) * 34ms);
-        }
-        
-        @keyframes letterIn {
-            to {
-                opacity: 1;
-                transform: translateY(0) rotate(0deg) scale(1);
-            }
-        }
-        
-        .modal {
-            position: fixed;
-            inset: 0;
-            z-index: 99990;
-            display: none;
-            place-items: center;
-            padding: 18px;
-            background: rgba(28, 17, 23, .55);
-            backdrop-filter: blur(10px);
-        }
-        
-        .modal.active {
-            display: grid;
-        }
-        
-        .modal-card {
-            width: min(94vw, 660px);
-            border: 4px solid var(--ink);
-            border-radius: 34px;
-            background: radial-gradient(circle at 15% 20%, rgba(255, 228, 94, .52), transparent 32%), radial-gradient(circle at 95% 30%, rgba(82, 228, 255, .42), transparent 34%), var(--paper-solid);
-            box-shadow: 14px 14px 0 var(--ink);
-            padding: 22px;
-            animation: modalPop .28s cubic-bezier(.17, .67, .21, 1.24);
-            overflow: hidden;
-        }
-        
-        @keyframes modalPop {
-            from {
-                transform: scale(.82) rotate(-5deg);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1) rotate(0deg);
-                opacity: 1;
-            }
-        }
-        
-        .modal-top {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 16px;
-            margin-bottom: 16px;
-        }
-        
-        .modal-title {
-            font-family: "Archivo Black", sans-serif;
-            font-size: clamp(28px, 7vw, 50px);
-            line-height: .88;
-            text-transform: uppercase;
-            letter-spacing: -0.07em;
-            color: var(--hot-pink);
-            text-shadow: 3px 3px 0 var(--yellow), 6px 6px 0 var(--ink);
-        }
-        
-        .modal-close {
-            width: 48px;
-            height: 48px;
-            border-radius: 16px;
-            background: var(--yellow);
-            font-family: "Archivo Black", sans-serif;
-            font-size: 28px;
-        }
-        
-        .modal-body {
-            display: grid;
-            gap: 14px;
-            color: var(--muted);
-            font-weight: 700;
-        }
-        
-        .modal-price {
-            width: fit-content;
-            border: 3px solid var(--ink);
-            border-radius: 999px;
-            background: var(--lime);
-            padding: 9px 13px;
-            color: var(--ink);
-            box-shadow: 5px 5px 0 var(--ink);
-            font-family: "Archivo Black", sans-serif;
-            font-size: 22px;
-        }
-        
-        .toast {
-            position: fixed;
-            right: 18px;
-            bottom: 18px;
-            z-index: 99991;
-            width: min(92vw, 370px);
-            border: 4px solid var(--ink);
-            border-radius: 24px;
-            background: var(--lime);
-            color: var(--ink);
-            box-shadow: 10px 10px 0 var(--ink);
-            padding: 16px;
-            font-weight: 950;
-            transform: translateY(180%);
-            transition: transform .25s ease;
-        }
-        
-        .toast.show {
-            transform: translateY(0);
-        }
-        
-        .toast small {
-            display: block;
-            margin-top: 4px;
-            color: rgba(28, 17, 23, .72);
-            font-size: 12px;
-            font-weight: 750;
-        }
-        
-        @media (hover: none),
-        (pointer: coarse) {
-            body {
-                cursor: auto;
-            }
-            .cursor,
-            .cursor-trail {
-                display: none;
-            }
-        }
-        
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: .001ms !important;
-                animation-iteration-count: 1 !important;
-                scroll-behavior: auto !important;
-                transition-duration: .001ms !important;
-            }
-        }
-        
-        body.reduce-motion *,
-        body.reduce-motion *::before,
-        body.reduce-motion *::after {
-            animation-duration: .001ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: .001ms !important;
-            scroll-behavior: auto !important;
-        }
-        
-        @media (min-width: 560px) {
-            .hero-actions {
-                grid-template-columns: repeat(2, max-content);
-            }
-            .btn-primary,
-            .btn-secondary {
-                width: auto;
-            }
-            .usp-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        @media (min-width: 768px) {
-            section {
-                padding: 104px 24px;
-            }
-            .nav {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 22px;
-            }
-            .nav-top {
-                flex: 0 0 auto;
-            }
-            .nav-links {
-                flex: 1;
-                justify-content: center;
-                overflow: visible;
-                padding: 0;
-            }
-            .hero {
-                padding-top: 88px;
-                padding-bottom: 118px;
-            }
-            .hero-layout {
-                grid-template-columns: 1.05fr .95fr;
-                gap: 48px;
-            }
-            .hero-visual {
-                min-height: 530px;
-            }
-            .hero p {
-                font-size: 17px;
-            }
-            .usp-section {
-                margin-top: -74px;
-            }
-            .usp-grid {
-                grid-template-columns: repeat(6, 1fr);
-            }
-            .brand-layout {
-                grid-template-columns: .68fr 1.32fr;
-                gap: 38px;
-            }
-            .brand-label {
-                text-align: left;
-            }
-            .brand-label .label {
-                justify-self: start;
-            }
-            .product-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 22px;
-            }
-            .product-card {
-                grid-template-columns: 1fr;
-                align-items: stretch;
-                padding: 18px;
-            }
-            .product-media {
-                aspect-ratio: 1 / .82;
-            }
-            .product-card h3 {
-                min-height: 58px;
-                font-size: 16px;
-            }
-            .cat-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-            .cat-box {
-                min-height: 310px;
-            }
-            .testi-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .motion-board {
-                grid-template-columns: 1.2fr .8fr;
-                align-items: center;
-                padding: 32px;
-            }
-            .footer-grid {
-                grid-template-columns: 1.55fr .75fr 1fr;
-                gap: 54px;
-            }
-        }
-        
-        @media (min-width: 1040px) {
-            .product-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-        
-        @media (max-width: 820px) {
-            .menu-button {
-                display: inline-flex;
-            }
-            .motion-button span,
-            .chaos-button span,
-            .nav-cta span {
-                display: none;
-            }
-            .nav {
-                position: relative;
-            }
-            .nav-links {
-                position: absolute;
-                left: 18px;
-                right: 18px;
-                top: calc(100% + 10px);
-                z-index: 200;
-                display: grid;
-                border: 4px solid var(--ink);
-                border-radius: 24px;
-                background: rgba(255, 255, 255, .9);
-                box-shadow: var(--hard-shadow);
-                padding: 12px;
-                transform: translateY(-16px) scale(.96);
-                opacity: 0;
-                pointer-events: none;
-                transition: .25s ease;
-            }
-            .nav-links.open {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-                pointer-events: auto;
-            }
-            .nav-links a {
-                justify-content: center;
-            }
-        }
-        
-        @media (max-width: 520px) {
-            .hero h1 {
-                text-shadow: 3px 3px 0 var(--yellow), 6px 6px 0 var(--hot-pink), 9px 9px 0 var(--ink);
-            }
-            .hero-stats {
-                grid-template-columns: 1fr;
-            }
-            .hero-visual {
-                min-height: 340px;
-            }
-            .hero-visual img {
-                width: min(68%, 260px);
-            }
-            .visual-sticker.two {
-                top: auto;
-                bottom: 72px;
-                right: 12px;
-            }
-            .usp-grid,
-            .cat-grid {
-                grid-template-columns: 1fr;
-            }
-            .product-card {
-                grid-template-columns: 1fr;
-            }
-            .product-media {
-                aspect-ratio: 1 / .72;
-            }
-            .footer-brand h2,
-            .section-header h2,
-            .brand-label h2 {
-                letter-spacing: -0.06em;
-            }
-        }
-        /* Hero balance + click delight pass */
-        
-        .hero {
-            min-height: auto !important;
-            padding-top: 54px !important;
-            padding-bottom: 78px !important;
-        }
-        
-        .hero::before {
-            inset: 14px 18px 34px !important;
-            border-radius: 36px;
-        }
-        
-        .hero-layout {
-            gap: 26px !important;
-        }
-        
-        .hero-copy {
-            opacity: 1 !important;
-            transform: none !important;
-            align-self: center;
-        }
-        
-        .hero h1 {
-            max-width: 620px;
-            font-size: 58px !important;
-            line-height: 1.02;
-            text-wrap: balance;
-            text-shadow: 3px 3px 0 var(--yellow), 6px 6px 0 var(--hot-pink), 9px 9px 0 rgba(28, 17, 23, .95) !important;
-        }
-        
-        .hero h1 .letter {
-            opacity: 1 !important;
-            transform: none !important;
-            display: inline !important;
-        }
-        
-        .hero p {
-            max-width: 560px;
-            margin-top: 18px;
-        }
-        
-        .hero-actions {
-            margin-top: 22px;
-        }
-        
-        .hero-stats {
-            max-width: 560px;
-            margin-top: 20px;
-        }
-        
-        .hero-visual {
-            min-height: 420px !important;
-            align-self: center;
-        }
-        
-        .hero-visual img {
-            width: min(74%, 330px);
-        }
-        
-        .hero-product-stack {
-            position: relative;
-            z-index: 4;
-            width: min(86%, 390px);
-            height: 330px;
-        }
-        
-        .hero-product-stack img {
-            position: absolute;
-            width: 54%;
-            height: 210px;
-            object-fit: cover;
-            border: 4px solid var(--ink);
-            border-radius: 32px;
-            background: var(--paper-solid);
-            padding: 10px;
-            box-shadow: 10px 10px 0 var(--ink), var(--glow);
-            filter: drop-shadow(0 24px 24px rgba(90, 20, 60, .18));
-            animation: stackFloat 4.4s ease-in-out infinite;
-        }
-        
-        @keyframes stackFloat {
-            0%,
-            100% {
-                transform: translateY(0) rotate(var(--rot));
-            }
-            50% {
-                transform: translateY(-14px) rotate(var(--rot));
-            }
-        }
-        
-        .hero-product-stack img:nth-child(1) {
-            left: 0;
-            top: 58px;
-            --rot: -7deg;
-        }
-        
-        .hero-product-stack img:nth-child(2) {
-            right: 0;
-            top: 18px;
-            z-index: 5;
-            --rot: 5deg;
-            animation-delay: .35s;
-        }
-        
-        .hero-product-stack img:nth-child(3) {
-            left: 23%;
-            bottom: 4px;
-            z-index: 6;
-            width: 50%;
-            --rot: -1deg;
-            animation-delay: .7s;
-        }
-        
-        @media (min-width: 880px) {
-            .hero {
-                padding-top: 58px !important;
-                padding-bottom: 82px !important;
-            }
-            .hero-layout {
-                grid-template-columns: minmax(420px, 1fr) minmax(360px, 440px) !important;
-                align-items: center;
-            }
-            .hero h1 {
-                font-size: 64px !important;
-            }
-            .hero-visual {
-                min-height: 420px !important;
-            }
-        }
-        
-        @media (max-width: 760px) {
-            .hero {
-                padding-top: 36px !important;
-                padding-bottom: 54px !important;
-            }
-            .hero::before {
-                inset: 8px 10px 18px !important;
-                border-radius: 28px;
-            }
-            .hero h1 {
-                font-size: 42px !important;
-                line-height: 1.04;
-            }
-            .hero p {
-                font-size: 15px;
-            }
-            .hero-visual {
-                min-height: 320px !important;
-            }
-            .hero-visual img {
-                width: min(72%, 250px);
-            }
-            .hero-product-stack {
-                height: 250px;
-                width: min(92%, 310px);
-            }
-            .hero-product-stack img {
-                height: 165px;
-                border-radius: 24px;
-            }
-        }
-        /* Softer beauty headline accent */
-        
-        .hero h1 {
-            color: #24141b !important;
-            text-shadow: 0 10px 28px rgba(255, 79, 172, .18) !important;
-            letter-spacing: -0.045em;
-        }
-        
-        .hero h1 span {
-            color: transparent !important;
-            background: linear-gradient(100deg, #ff4fac, #ff7fbd 45%, #8f5bff 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            text-shadow: none !important;
-            filter: none !important;
-            animation: none !important;
-        }
-        
-        .hero h1::after {
-            content: "";
-            display: block;
-            width: 132px;
-            height: 10px;
-            margin-top: 14px;
-            border-radius: 999px;
-            background: linear-gradient(90deg, #ff4fac, #ffd1e8, #52e4ff);
-            box-shadow: 0 12px 24px rgba(255, 79, 172, .22);
-        }
-        
-        @media (max-width: 760px) {
-            .hero h1::after {
-                width: 104px;
-                height: 8px;
-                margin-top: 12px;
-            }
+        /* Tactile Soft Pop Card & Button */
+        .pastel-card {
+            border: 1.5px solid #26232B;
+            box-shadow: 0 3px 0 0 #26232B;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .pastel-card:active {
+            transform: translateY(1.5px);
+            box-shadow: 0 1.5px 0 0 #26232B;
+        }
+        .pastel-btn {
+            border: 1.5px solid #26232B;
+            box-shadow: 0 2.5px 0 0 #26232B;
+            transition: all 0.12s ease;
+        }
+        .pastel-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 0px 0 0 #26232B;
+        }
+        /* Bottom Sheet Slide Animation */
+        .sheet-enter {
+            transform: translateY(0%);
+        }
+        .sheet-exit {
+            transform: translateY(105%);
         }
     </style>
 </head>
+<body class="pb-28 selection:bg-pastel-rose selection:text-pastel-ink">
 
-<body>
-    <div class="loading-screen" id="loadingScreen" aria-hidden="true">
-        <div class="loader-card">
-            <h1>Glow is Loading</h1>
-            <div class="loading-bar">
-                <div class="loading-fill" id="loadingFill"></div>
-            </div>
-            <p class="loader-caption" id="loaderCaption">menyiapkan katalog skincare...</p>
-        </div>
+    <!-- 1. TOP PROMO MINI BAR -->
+    <div class="bg-pastel-rose border-b border-pastel-ink/15 px-3 py-1.5 text-center text-[11px] sm:text-xs font-bold text-pastel-ink flex items-center justify-center gap-1.5">
+        <span class="px-1.5 py-0.5 rounded-full bg-white border border-pastel-ink text-[10px] font-extrabold">PROMO</span>
+        <span>Gratis Ongkir & Hadiah Sheet Mask min. belanja Rp 100rb! 🌸</span>
     </div>
 
-    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-    <div class="cursor" id="cursor" aria-hidden="true"></div>
+    <!-- 2. STICKY MOBILE-FIRST HEADER -->
+    <header class="sticky top-0 z-30 bg-pastel-bg/90 backdrop-blur-md border-b border-pastel-ink/10">
+        <div class="max-w-5xl mx-auto px-3.5 py-2.5 flex items-center justify-between gap-2">
+            <!-- Brand Logo (Uses needskincare-logo.png with instant SVG fallback) -->
+            <a href="#" onclick="resetAllFilters()" class="flex items-center gap-2 shrink-0">
+                <div class="w-9 h-9 rounded-2xl bg-pastel-rose border border-pastel-ink flex items-center justify-center overflow-hidden shadow-2xs">
+                    <img src="needskincare-logo.png" alt="needskincare" 
+                         onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                         class="w-full h-full object-contain p-0.5">
+                    <!-- Clean SVG Fallback Logo -->
+                    <svg class="hidden w-5 h-5 text-pastel-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" fill="#FF85A9"/>
+                        <path d="M12 8v4m0 0l2 2"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-extrabold text-base sm:text-lg tracking-tight block leading-none">need<span class="text-pink-500">skincare</span></span>
+                    <span class="text-[10px] font-semibold text-pastel-muted block mt-0.5">Daily Glow Essentials ✨</span>
+                </div>
+            </a>
 
-    <header class="site-header">
-        <nav class="nav" aria-label="Navigasi utama">
-            <div class="nav-top">
-                <a href="#home" class="logo-nav magnetic" aria-label="Needskincare home">
-                    <img src="needskincare-logo.PNG" alt="Needskincare Logo" loading="eager" />
-                    <span class="logo-text">Needskincare <small>Original Beauty Store</small></span>
-                </a>
-                <div class="nav-tools">
-                    <button class="menu-button magnetic" type="button" id="menuButton" aria-label="Buka menu"><i class="fas fa-bars"></i></button>
-                    <a class="nav-cta magnetic" href="#best"><span>Belanja</span> <i class="fas fa-shopping-bag" aria-hidden="true"></i></a>
+            <!-- Desktop Search Bar (Hidden on small mobile, toggled via icon) -->
+            <div class="hidden sm:flex flex-1 max-w-xs mx-4">
+                <div class="relative w-full">
+                    <input type="search" id="desktop-search" oninput="handleSearch(this.value)" placeholder="Cari Azarine, Glad2Glow, Paket..." 
+                           class="w-full pl-9 pr-3 py-1.5 rounded-full bg-white border border-pastel-ink text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-pastel-roseDark">
+                    <svg class="w-4 h-4 text-pastel-muted absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+                    </svg>
                 </div>
             </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Beranda</a></li>
-                <li><a href="#brand">Brand</a></li>
-                <li><a href="#best">Best Seller</a></li>
-                <li><a href="#kategori">Kategori</a></li>
-                <li><a href="#order-guide">Cara Belanja</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
+
+            <!-- Right Mobile Quick Actions -->
+            <div class="flex items-center gap-2">
+                <!-- Mobile Search Toggle Button -->
+                <button onclick="toggleMobileSearch()" aria-label="Cari Produk" class="sm:hidden w-9 h-9 rounded-full bg-white border border-pastel-ink flex items-center justify-center active:scale-95 transition-transform">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+                    </svg>
+                </button>
+
+                <!-- Skin Matcher Shortcut Pill -->
+                <a href="#skin-matcher" class="pastel-btn bg-pastel-butter px-3 py-1.5 rounded-full text-xs font-extrabold flex items-center gap-1">
+                    <span>✨</span>
+                    <span class="hidden xs:inline sm:inline">Cek Kulit</span>
+                </a>
+
+                <!-- Cart Trigger Button -->
+                <button onclick="openCartSheet()" class="pastel-btn bg-pastel-mint px-3 py-1.5 rounded-full text-xs font-extrabold flex items-center gap-1.5 relative">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                    </svg>
+                    <span id="header-cart-count" class="bg-pastel-ink text-white text-[10px] font-extrabold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Expandable Mobile Search Bar -->
+        <div id="mobile-search-bar" class="hidden sm:hidden px-3.5 pb-2.5">
+            <div class="relative">
+                <input type="search" id="mobile-search-input" oninput="handleSearch(this.value)" placeholder="Ketik nama skincare, lip tint, atau paket..." 
+                       class="w-full pl-9 pr-8 py-2 rounded-2xl bg-white border border-pastel-ink text-xs font-semibold focus:outline-none">
+                <svg class="w-4 h-4 text-pastel-muted absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+                </svg>
+                <button onclick="clearSearch()" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-bold text-pastel-muted px-1.5 py-0.5 bg-pastel-bg rounded-md">Reset</button>
+            </div>
+        </div>
     </header>
 
-    <div class="marquee" aria-hidden="true">
-        <div class="marquee-track">
-            <span>✦ All Brands One Glow</span>
-            <span>✧ Original Beauty Store</span>
-            <span>✹ Glow-up Lebih Gampang</span>
-            <span>♡ Harga Bersahabat</span>
-            <span>✦ All Brands One Glow</span>
-            <span>✧ Original Beauty Store</span>
-            <span>✹ Glow-up Lebih Gampang</span>
-            <span>♡ Harga Bersahabat</span>
-        </div>
-    </div>
+    <!-- MAIN CONTAINER (Compact & Mobile-Optimized) -->
+    <main class="max-w-5xl mx-auto px-3.5 pt-4 space-y-6">
 
-    <main>
-        <section class="hero" id="home">
-            <div class="container hero-layout">
-                <div class="hero-copy reveal">
-                    <span class="eyebrow"><i class="fas fa-star" aria-hidden="true"></i> All Brands, One Glow</span>
-                    <h1 id="heroTitle">Glow-up dari <span>satu tempat.</span></h1>
-                    <p>Belanja skincare dan makeup original jadi lebih gampang. Produk favorit, harga bersahabat, dan order cepat lewat WhatsApp.</p>
-
-                    <div class="hero-actions">
-                        <a href="#best" class="btn-primary magnetic">Lihat Best Seller <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
-                        <a href="https://www.instagram.com/needskincareid" target="_blank" rel="noopener" class="btn-secondary magnetic">Cek Instagram</a>
+        <!-- 3. COMPACT MOBILE HERO BANNER -->
+        <section id="beranda" class="pastel-card rounded-3xl bg-gradient-to-br from-pastel-rose via-pastel-bg to-pastel-berry p-4 sm:p-6 relative overflow-hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+                <div class="sm:col-span-7 space-y-2.5">
+                    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white border border-pastel-ink text-[11px] font-extrabold">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                        <span>100% Original & BPOM Certified</span>
                     </div>
-
-                    <div class="hero-stats" aria-label="Ringkasan Needskincare">
-                        <div class="hero-stat tilt" style="--r:-2deg"><strong data-count="100">0</strong><span>Original product</span></div>
-                        <div class="hero-stat tilt" style="--r:2deg"><strong data-count="7">0</strong><span>Brand favorit</span></div>
-                        <div class="hero-stat tilt" style="--r:-1deg"><strong data-count="24">0</strong><span>Fast response</span></div>
+                    <h1 class="text-2xl sm:text-3xl font-extrabold leading-tight tracking-tight text-pastel-ink">
+                        Rawat Kulit Glowing Tanpa Ribet & <span class="bg-pastel-butter px-2 py-0.5 rounded-xl border border-pastel-ink inline-block">Ramah Kantong!</span> 🌷
+                    </h1>
+                    <p class="text-xs sm:text-sm text-pastel-muted font-medium leading-relaxed">
+                        Kurasi skincare harian, lip tint viral, hingga paket bundling hemat untuk semua jenis kulitmu.
+                    </p>
+                    <div class="pt-1 flex items-center gap-2.5">
+                        <a href="#katalog" class="pastel-btn bg-pastel-ink text-white px-4 py-2 rounded-full text-xs font-extrabold">
+                            Belanja Sekarang
+                        </a>
+                        <a href="#skin-matcher" class="pastel-btn bg-white text-pastel-ink px-3.5 py-2 rounded-full text-xs font-extrabold">
+                            🎯 Cari Sesuai Kulit
+                        </a>
                     </div>
                 </div>
 
-                <div class="hero-visual reveal tilt" aria-label="Visual Needskincare">
-                    <span class="visual-sticker one">Glow Drop!</span>
-                    <span class="visual-sticker two">100% Original</span>
-                    <div class="hero-product-stack" aria-label="Produk pilihan Needskincare">
-                        <img src="azarine-ss-50spf.png" alt="Azarine Hydramax-C Sunscreen Serum" loading="eager" />
-                        <img src="skintific-ceremide-mos.png" alt="Skintific 5X Ceramide Moisture Gel" loading="eager" />
-                        <img src="wardah-perfect-set.jpg" alt="Wardah Perfect Set" loading="eager" />
+                <!-- Right Mini Featured Showcase -->
+                <div class="sm:col-span-5 flex items-center justify-center">
+                    <div class="grid grid-cols-2 gap-2.5 w-full max-w-[260px]">
+                        <div onclick="openQuickView('g2g-blueberry')" class="bg-white/90 border border-pastel-ink rounded-2xl p-2.5 text-center cursor-pointer hover:-translate-y-0.5 transition-transform">
+                            <div class="h-16 flex items-center justify-center">
+                                <img src="g2g-blueberry-mosturizer.png" alt="Glad2Glow" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" class="max-h-14 object-contain">
+                                <div class="hidden text-2xl">🫐</div>
+                            </div>
+                            <p class="text-[10px] font-extrabold truncate mt-1">G2G Blueberry</p>
+                            <span class="text-[10px] font-bold text-pink-600">Rp 42.000</span>
+                        </div>
+                        <div onclick="openQuickView('azarine-spf')" class="bg-white/90 border border-pastel-ink rounded-2xl p-2.5 text-center cursor-pointer hover:-translate-y-0.5 transition-transform">
+                            <div class="h-16 flex items-center justify-center">
+                                <img src="azarine-ss-50spf.png" alt="Azarine" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" class="max-h-14 object-contain">
+                                <div class="hidden text-2xl">☀️</div>
+                            </div>
+                            <p class="text-[10px] font-extrabold truncate mt-1">Azarine SPF50</p>
+                            <span class="text-[10px] font-bold text-emerald-600">Rp 58.000</span>
+                        </div>
                     </div>
-                    <span class="hero-note"><i class="fas fa-circle-check" aria-hidden="true"></i> Authentic</span>
                 </div>
             </div>
         </section>
 
-        <section class="usp-section" aria-label="Keunggulan Needskincare">
-            <div class="container usp-grid reveal">
-                <div class="usp-card tilt" style="--r:-2deg; --bubble:var(--yellow)"><i class="fas fa-check-double" aria-hidden="true"></i>
-                    <h4>Produk lengkap</h4>
+        <!-- 4. INTERACTIVE SKIN CONCERN MATCHER ("CEK KEBUTUHAN KULITMU") -->
+        <section id="skin-matcher" class="scroll-mt-20 bg-pastel-berry/60 border border-pastel-ink rounded-3xl p-4 sm:p-5">
+            <div class="flex items-center justify-between mb-3">
+                <div>
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-pastel-berryDark block">Smart Filter</span>
+                    <h2 class="text-sm sm:text-base font-extrabold">Lagi butuh perawatan apa hari ini? 💡</h2>
                 </div>
-                <div class="usp-card tilt" style="--r:2deg; --bubble:var(--cyan)"><i class="fas fa-magic" aria-hidden="true"></i>
-                    <h4>Update stok</h4>
-                </div>
-                <div class="usp-card tilt" style="--r:-1deg; --bubble:var(--pink)"><i class="fas fa-percentage" aria-hidden="true"></i>
-                    <h4>Harga promo</h4>
-                </div>
-                <div class="usp-card tilt" style="--r:1deg; --bubble:var(--lime)"><i class="fas fa-users" aria-hidden="true"></i>
-                    <h4>Reseller ready</h4>
-                </div>
-                <div class="usp-card tilt" style="--r:-2deg; --bubble:var(--peach)"><i class="fas fa-shipping-fast" aria-hidden="true"></i>
-                    <h4>Proses cepat</h4>
-                </div>
-                <div class="usp-card tilt" style="--r:2deg; --bubble:var(--purple)"><i class="fas fa-heart" aria-hidden="true"></i>
-                    <h4>Admin ramah</h4>
-                </div>
+                <button id="reset-concern-btn" onclick="selectConcern(null)" class="hidden text-[11px] font-extrabold text-pink-600 underline">
+                    Reset Pilihan
+                </button>
             </div>
-        </section>
 
-        <section class="brand-section" id="brand">
-            <div class="container brand-layout">
-                <div class="brand-label reveal">
-                    <span class="label">Brand Parade</span>
-                    <h2>Brand favorit kamu ada di sini.</h2>
-                    <p>Pilihan skincare, makeup, hair care, dan body care dari berbagai brand populer. Slider ini bisa digeser, auto bergerak, dan tetap bisa dikontrol manual.</p>
-                </div>
-                <div class="brand-slider-wrap reveal">
-                    <button class="nav-btn magnetic" onclick="sideScroll('brandSlider', 'left')" aria-label="Geser brand ke kiri"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
-                    <div class="brand-slider" id="brandSlider">
-                        <div class="brand-item tilt" style="--r:-2deg"><img src="skintific-ceremide-mos.png" alt="SKINTIFIC" loading="lazy" /></div>
-                        <div class="brand-item tilt" style="--r:2deg"><img src="wardah-perfect-set.jpg" alt="WARDAH" loading="lazy" /></div>
-                        <div class="brand-item tilt" style="--r:-1deg"><img src="g2g-blueberry-mosturizer.png" alt="GLAD 2 GLOW" loading="lazy" /></div>
-                        <div class="brand-item tilt" style="--r:1deg"><img src="azarine-ss-50spf.png" alt="AZARINE" loading="lazy" /></div>
-                        <div class="brand-item tilt" style="--r:-2deg"><img src="purbasari-set.png" alt="PURBASARI" loading="lazy" /></div>
-                        <div class="brand-item tilt" style="--r:2deg"><img src="focallure-liptint.png" alt="FOCALLURE" loading="lazy" /></div>
-                        <div class="brand-item tilt" style="--r:-1deg"><img src="makarizo-set.png" alt="MAKARIZO" loading="lazy" /></div>
-                    </div>
-                    <button class="nav-btn magnetic" onclick="sideScroll('brandSlider', 'right')" aria-label="Geser brand ke kanan"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
-                </div>
-            </div>
-        </section>
-
-        <section class="best-seller" id="best">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="label">Product Spotlight</span>
-                    <h2>Best Seller Product</h2>
-                    <p>Produk paling laris yang wajib masuk keranjangmu. Kartu produk sudah diberi efek 3D tilt, shine, filter kategori, quick view, toast, dan WhatsApp order.</p>
-                </div>
-
-                <div class="product-toolbar reveal" aria-label="Filter produk">
-                    <button class="pill-filter active" data-filter="all">Semua</button>
-                    <button class="pill-filter" data-filter="moisturizer">Moisturizer</button>
-                    <button class="pill-filter" data-filter="sunscreen">Sunscreen</button>
-                    <button class="pill-filter" data-filter="makeup">Makeup</button>
-                </div>
-
-                <div class="product-grid" id="productGrid">
-                    <article class="product-card reveal tilt" data-category="moisturizer" data-name="Skintific 5X Ceramide Moisture Gel" data-price="109.000" data-tag="Moisturizer">
-                        <div class="product-media"><img src="skintific-ceremide-mos.png" alt="Skintific 5X Ceramide Moisture Gel" loading="lazy" /></div>
-                        <div class="product-info">
-                            <span class="product-tag" style="--tag-bg:var(--yellow)">Moisturizer</span>
-                            <h3>Skintific 5X Ceramide Moisture Gel</h3>
-                            <span class="price">Rp 109.000</span>
-                            <button class="btn-wa magnetic" onclick="order('Skintific 5X Ceramide Moisture Gel', '109.000')">Beli via WA</button>
-                            <button class="quick-view" type="button">Quick view</button>
-                        </div>
-                    </article>
-
-                    <article class="product-card reveal tilt" data-category="moisturizer" data-name="Glad2Glow Blueberry Ceramide Moisturizer" data-price="39.000" data-tag="Moisturizer">
-                        <div class="product-media"><img src="g2g-blueberry-mosturizer.png" alt="Glad2Glow Blueberry Moisture" loading="lazy" /></div>
-                        <div class="product-info">
-                            <span class="product-tag" style="--tag-bg:var(--cyan)">Moisturizer</span>
-                            <h3>Glad2Glow Blueberry Moisture</h3>
-                            <span class="price">Rp 39.000</span>
-                            <button class="btn-wa magnetic" onclick="order('Glad2Glow Blueberry Ceramide Moisturizer', '39.000')">Beli via WA</button>
-                            <button class="quick-view" type="button">Quick view</button>
-                        </div>
-                    </article>
-
-                    <article class="product-card reveal tilt" data-category="sunscreen" data-name="Azarine Hydramax-C Sunscreen Serum SPF50" data-price="55.000" data-tag="Sunscreen">
-                        <div class="product-media"><img src="azarine-ss-50spf.png" alt="Azarine Hydramax-C Sunscreen Serum SPF50" loading="lazy" /></div>
-                        <div class="product-info">
-                            <span class="product-tag" style="--tag-bg:var(--lime)">Sunscreen</span>
-                            <h3>Azarine Hydramax-C Sunscreen Serum</h3>
-                            <span class="price">Rp 55.000</span>
-                            <button class="btn-wa magnetic" onclick="order('Azarine Hydramax-C Sunscreen Serum SPF50', '55.000')">Beli via WA</button>
-                            <button class="quick-view" type="button">Quick view</button>
-                        </div>
-                    </article>
-
-                    <article class="product-card reveal tilt" data-category="makeup" data-name="Focallure Transferproof Lip Tint" data-price="35.000" data-tag="Makeup">
-                        <div class="product-media"><img src="focallure-liptint.png" alt="Focallure Transferproof Lip Tint" loading="lazy" /></div>
-                        <div class="product-info">
-                            <span class="product-tag" style="--tag-bg:var(--peach)">Makeup</span>
-                            <h3>Focallure Transferproof Lip Tint</h3>
-                            <span class="price">Rp 35.000</span>
-                            <button class="btn-wa magnetic" onclick="order('Focallure Transferproof Lip Tint', '35.000')">Beli via WA</button>
-                            <button class="quick-view" type="button">Quick view</button>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="category-section" id="kategori">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="label">Beauty Universe</span>
-                    <h2>Telusuri perawatanmu.</h2>
-                    <p>Pilih kategori sesuai kebutuhan kulit, rambut, dan daily beauty routine kamu.</p>
-                </div>
-                <div class="cat-grid">
-                    <a href="#best" class="cat-box reveal tilt" data-emoji="🧴" style="--r:-2deg; background-image: url('wardah-perfect-set.jpg');">
-                        <h3>Skincare</h3>
-                    </a>
-                    <a href="#best" class="cat-box reveal tilt" data-emoji="💄" style="--r:2deg; background-image: url('OMG-set.png');">
-                        <h3>Makeup</h3>
-                    </a>
-                    <a href="#best" class="cat-box reveal tilt" data-emoji="🫧" style="--r:-1deg; background-image: url('makarizo-set.png');">
-                        <h3>Hair Care</h3>
-                    </a>
-                    <a href="#best" class="cat-box reveal tilt" data-emoji="🌸" style="--r:1deg; background-image: url('purbasari-set.png');">
-                        <h3>Body Care</h3>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="testi-section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="label">Customer Love</span>
-                    <h2>Dengarkan kata mereka.</h2>
-                    <p>Review pelanggan yang sudah belanja di Needskincare.</p>
-                </div>
-                <div class="testi-container">
-                    <article class="testi-card reveal tilt" style="--r:-2deg">
-                        <i class="fas fa-quote-left" aria-hidden="true"></i>
-                        <p>"Harganya beneran harga distributor, buat reseller kayak aku untungnya lumayan banget!"</p>
-                        <h5>Sarah Amelia</h5>
-                    </article>
-                    <article class="testi-card reveal tilt" style="--r:2deg">
-                        <i class="fas fa-quote-left" aria-hidden="true"></i>
-                        <p>"Packing super aman, barang datang mulus tanpa cacat. Adminnya juga sabar banget."</p>
-                        <h5>Bunga Lestari</h5>
-                    </article>
-                    <article class="testi-card reveal tilt" style="--r:-1deg">
-                        <i class="fas fa-quote-left" aria-hidden="true"></i>
-                        <p>"Udah langganan di Needskincare dari lama, nggak pernah kecewa sama kualitas barangnya."</p>
-                        <h5>Putri Indah</h5>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="motion-lab" id="order-guide">
-            <div class="container">
-                <div class="motion-board reveal tilt">
+            <!-- Horizontal Scrollable Concern Cards on Mobile, 4 Cols on Tablet/Desktop -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="concern-buttons">
+                <button onclick="selectConcern('barrier')" data-concern="barrier" class="concern-btn pastel-btn bg-white p-2.5 rounded-2xl text-left flex items-center gap-2.5">
+                    <span class="w-8 h-8 rounded-xl bg-pastel-berry border border-pastel-ink flex items-center justify-center text-base shrink-0">💧</span>
                     <div>
-                        <span class="label">Cara Belanja</span>
-                        <h2>Order skincare tanpa ribet.</h2>
-                        <p>Pilih produk favorit, cek detailnya, lalu admin Needskincare akan bantu konfirmasi stok, total pembayaran, dan opsi pengiriman lewat WhatsApp.</p>
+                        <div class="text-xs font-extrabold leading-tight">Kulit Kering</div>
+                        <div class="text-[10px] text-pastel-muted font-semibold">& Skin Barrier</div>
                     </div>
-                    <div class="motion-actions">
-                        <a class="mini-action magnetic" href="#best">1. Pilih produk</a>
-                        <a class="mini-action magnetic" href="https://wa.me/6281293696614" target="_blank" rel="noopener">2. Chat admin</a>
-                        <a class="mini-action magnetic" href="#faq">3. Cek ketentuan</a>
-                        <a class="mini-action magnetic" href="#brand">4. Lihat brand</a>
+                </button>
+
+                <button onclick="selectConcern('sun')" data-concern="sun" class="concern-btn pastel-btn bg-white p-2.5 rounded-2xl text-left flex items-center gap-2.5">
+                    <span class="w-8 h-8 rounded-xl bg-pastel-mint border border-pastel-ink flex items-center justify-center text-base shrink-0">☀️</span>
+                    <div>
+                        <div class="text-xs font-extrabold leading-tight">Anti Kusam</div>
+                        <div class="text-[10px] text-pastel-muted font-semibold">& Proteksi UV</div>
                     </div>
+                </button>
+
+                <button onclick="selectConcern('glow-lips')" data-concern="glow-lips" class="concern-btn pastel-btn bg-white p-2.5 rounded-2xl text-left flex items-center gap-2.5">
+                    <span class="w-8 h-8 rounded-xl bg-pastel-rose border border-pastel-ink flex items-center justify-center text-base shrink-0">💄</span>
+                    <div>
+                        <div class="text-xs font-extrabold leading-tight">Paket Hemat</div>
+                        <div class="text-[10px] text-pastel-muted font-semibold">& Bibir Fresh</div>
+                    </div>
+                </button>
+
+                <button onclick="selectConcern('body-hair')" data-concern="body-hair" class="concern-btn pastel-btn bg-white p-2.5 rounded-2xl text-left flex items-center gap-2.5">
+                    <span class="w-8 h-8 rounded-xl bg-pastel-butter border border-pastel-ink flex items-center justify-center text-base shrink-0">🛁</span>
+                    <div>
+                        <div class="text-xs font-extrabold leading-tight">Hair & Body</div>
+                        <div class="text-[10px] text-pastel-muted font-semibold">Spa di Rumah</div>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Active Recommendation Helper Banner -->
+            <div id="concern-recommendation-note" class="hidden mt-3 bg-white border border-pastel-ink rounded-2xl px-3.5 py-2 text-xs font-semibold flex items-center justify-between">
+                <span id="concern-note-text">Menampilkan rekomendasi terbaik untukmu ✨</span>
+                <span class="text-[10px] font-extrabold bg-pastel-mint px-2 py-0.5 rounded-full border border-pastel-ink">Cocok!</span>
+            </div>
+        </section>
+
+        <!-- 5. STICKY CATEGORY PILLS & CATALOG SECTION -->
+        <section id="katalog" class="scroll-mt-16 space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-lg sm:text-xl font-extrabold flex items-center gap-1.5">
+                        <span>Katalog Produk</span>
+                        <span id="product-count-badge" class="text-xs font-extrabold bg-pastel-rose px-2.5 py-0.5 rounded-full border border-pastel-ink">8 Produk</span>
+                    </h2>
+                    <!-- Sort Dropdown on Mobile -->
+                    <select id="sort-select" onchange="handleSort(this.value)" class="text-xs font-bold bg-white border border-pastel-ink rounded-full px-3 py-1.5 focus:outline-none">
+                        <option value="popular">🔥 Paling Laris</option>
+                        <option value="price-asc">💸 Harga Terendah</option>
+                        <option value="price-desc">💎 Harga Tertinggi</option>
+                    </select>
+                </div>
+
+                <!-- Touch-Friendly Horizontal Scrollable Category Pills -->
+                <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1" id="category-pills">
+                    <button onclick="selectCategory('all')" data-cat="all" class="cat-pill pastel-btn bg-pastel-ink text-white px-3.5 py-1.5 rounded-full text-xs font-extrabold shrink-0">
+                        Semua (8)
+                    </button>
+                    <button onclick="selectCategory('Skincare')" data-cat="Skincare" class="cat-pill pastel-btn bg-white px-3.5 py-1.5 rounded-full text-xs font-extrabold shrink-0">
+                        🧴 Skincare
+                    </button>
+                    <button onclick="selectCategory('Bundling Set')" data-cat="Bundling Set" class="cat-pill pastel-btn bg-white px-3.5 py-1.5 rounded-full text-xs font-extrabold shrink-0">
+                        🎁 Bundling Hemat
+                    </button>
+                    <button onclick="selectCategory('Makeup')" data-cat="Makeup" class="cat-pill pastel-btn bg-white px-3.5 py-1.5 rounded-full text-xs font-extrabold shrink-0">
+                        💋 Makeup
+                    </button>
+                    <button onclick="selectCategory('Hair & Body')" data-cat="Hair & Body" class="cat-pill pastel-btn bg-white px-3.5 py-1.5 rounded-full text-xs font-extrabold shrink-0">
+                        ✨ Hair & Body
+                    </button>
+                </div>
+            </div>
+
+            <!-- 2-Column Mobile Grid -> 4-Column Desktop Grid -->
+            <div id="product-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+                <!-- Populated by Lightweight Vanilla JS -->
+            </div>
+        </section>
+
+        <!-- 6. ULTRA-LIGHTWEIGHT TRUST &ROUTINE TIPS BANNER -->
+        <section class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+            <div class="bg-pastel-mint/70 border border-pastel-ink rounded-2xl p-3.5 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-white border border-pastel-ink flex items-center justify-center text-lg shrink-0">🛡️</div>
+                <div>
+                    <h3 class="text-xs font-extrabold">Jaminan 100% Ori BPOM</h3>
+                    <p class="text-[11px] text-pastel-muted font-medium">Aman untuk remaja & ibu hamil.</p>
+                </div>
+            </div>
+            <div class="bg-pastel-butter/80 border border-pastel-ink rounded-2xl p-3.5 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-white border border-pastel-ink flex items-center justify-center text-lg shrink-0">⚡</div>
+                <div>
+                    <h3 class="text-xs font-extrabold">Pengiriman Instan & Rapi</h3>
+                    <p class="text-[11px] text-pastel-muted font-medium">Free bubble wrap tebal berlapis.</p>
+                </div>
+            </div>
+            <div class="bg-pastel-rose/70 border border-pastel-ink rounded-2xl p-3.5 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-white border border-pastel-ink flex items-center justify-center text-lg shrink-0">💬</div>
+                <div>
+                    <h3 class="text-xs font-extrabold">Konsultasi Gratis</h3>
+                    <p class="text-[11px] text-pastel-muted font-medium">Bingung pilih? Chat admin via WA.</p>
                 </div>
             </div>
         </section>
 
-        <section class="faq-section" id="faq">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="label">FAQ</span>
-                    <h2>Pertanyaan umum.</h2>
-                    <p>Beberapa hal yang sering ditanyakan sebelum order.</p>
-                </div>
-                <div class="faq-container">
-                    <details class="reveal" style="--r:-1deg">
-                        <summary>Apakah produk 100% original?</summary>
-                        <p>Tentu saja. Kami adalah distributor tangan pertama dari brand-brand resmi. Keaslian produk adalah prioritas utama kami.</p>
-                    </details>
-                    <details class="reveal" style="--r:1deg">
-                        <summary>Berapa lama pengiriman ke rumah saya?</summary>
-                        <p>Pesanan diproses di hari yang sama. Pengiriman biasanya memakan waktu 1-3 hari kerja tergantung lokasi Anda.</p>
-                    </details>
-                    <details class="reveal" style="--r:-1deg">
-                        <summary>Bagaimana jika barang yang datang rusak?</summary>
-                        <p>Silakan kirimkan video unboxing tanpa jeda, kami akan membantu pengecekan dan proses penggantian sesuai ketentuan toko.</p>
-                    </details>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-brand reveal">
-                <h2>Needskincare.</h2>
-                <p>Distributor kecantikan terpercaya yang menghadirkan brand-brand terbaik untuk kulit impianmu. All Brands, One Glow.</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/needskincareid" target="_blank" rel="noopener" aria-label="Instagram Needskincare"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                    <a href="https://www.tiktok.com/@needskincareeid" target="_blank" rel="noopener" aria-label="TikTok Needskincare"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
-                </div>
-            </div>
-            <div class="footer-list reveal">
-                <h4>Tautan Cepat</h4>
-                <a href="#home">Beranda</a>
-                <a href="#brand">Brand</a>
-                <a href="#best">Best Seller</a>
-                <a href="#faq">FAQ</a>
-            </div>
-            <div class="footer-contact reveal">
-                <h4>Hubungi Kami</h4>
-                <p><i class="fas fa-phone-alt" aria-hidden="true"></i> 081293696614</p>
-                <p><i class="fas fa-envelope" aria-hidden="true"></i> @needskincare.id</p>
-                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Cilangkap, Jakarta Timur</p>
-            </div>
-        </div>
-        <div class="copyright">&copy; 2026 Needskincare Indonesia. All Brands One Glow.</div>
+    <!-- SIMPLE CLEAN FOOTER -->
+    <footer class="max-w-5xl mx-auto px-3.5 pt-10 pb-8 text-center text-xs text-pastel-muted font-semibold">
+        <p>© 2026 <strong>needskincare</strong> • Dibuat ringan, cepat & ramah pengguna mobile 💖</p>
     </footer>
 
-    <div class="modal" id="productModal" aria-hidden="true">
-        <div class="modal-card">
-            <div class="modal-top">
-                <h3 class="modal-title" id="modalTitle">Product</h3>
-                <button class="modal-close magnetic" type="button" id="modalClose" aria-label="Tutup modal">×</button>
+    <!-- 7. FLOATING SUMMARY CART BAR (Appears above Bottom Nav when Cart > 0) -->
+    <div id="floating-cart-bar" class="fixed bottom-16 left-0 right-0 z-30 px-3.5 pointer-events-none hidden">
+        <div class="max-w-md mx-auto bg-pastel-ink text-white border-2 border-pastel-ink rounded-2xl p-3 shadow-lg flex items-center justify-between pointer-events-auto">
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-xl bg-pastel-rose text-pastel-ink font-extrabold text-xs flex items-center justify-center" id="floating-qty">1</div>
+                <div>
+                    <div class="text-[10px] text-gray-300 font-semibold">Total Keranjang</div>
+                    <div class="text-sm font-extrabold" id="floating-total">Rp 0</div>
+                </div>
             </div>
-            <div class="modal-body">
-                <p id="modalText">Detail produk akan tampil di sini.</p>
-                <span class="modal-price" id="modalPrice">Rp 0</span>
-                <button class="btn-wa magnetic" type="button" id="modalOrder">Beli via WhatsApp</button>
+            <button onclick="openCartSheet()" class="bg-pastel-mint text-pastel-ink px-4 py-2 rounded-xl text-xs font-extrabold flex items-center gap-1 active:scale-95 transition-transform">
+                <span>Checkout</span>
+                <span>→</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 8. FIXED MOBILE BOTTOM NAVIGATION BAR -->
+    <nav class="fixed bottom-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-md border-t border-pastel-ink/15 sm:hidden">
+        <div class="grid grid-cols-4 h-14 max-w-md mx-auto">
+            <a href="#beranda" onclick="resetAllFilters()" class="flex flex-col items-center justify-center gap-0.5 text-pastel-ink font-bold text-[10px]">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                </svg>
+                <span>Beranda</span>
+            </a>
+            <a href="#skin-matcher" class="flex flex-col items-center justify-center gap-0.5 text-pastel-muted hover:text-pastel-ink font-bold text-[10px]">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"/>
+                </svg>
+                <span>Cek Kulit</span>
+            </a>
+            <a href="#katalog" class="flex flex-col items-center justify-center gap-0.5 text-pastel-muted hover:text-pastel-ink font-bold text-[10px]">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/>
+                </svg>
+                <span>Katalog</span>
+            </a>
+            <button onclick="openCartSheet()" class="flex flex-col items-center justify-center gap-0.5 text-pastel-muted hover:text-pastel-ink font-bold text-[10px] relative">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/>
+                </svg>
+                <span>Keranjang</span>
+                <span id="bottom-nav-badge" class="absolute top-1.5 right-6 bg-pastel-roseDark text-white text-[9px] font-extrabold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 9. PRODUCT QUICK-VIEW BOTTOM SHEET MODAL -->
+    <div id="quickview-backdrop" onclick="closeQuickView()" class="fixed inset-0 bg-black/40 z-40 hidden"></div>
+    <div id="quickview-sheet" class="fixed bottom-0 left-0 right-0 z-50 max-w-lg mx-auto bg-white border-t-2 sm:border-2 border-pastel-ink rounded-t-3xl sm:rounded-3xl sm:bottom-6 p-5 transition-transform duration-200 sheet-exit hidden">
+        <div class="w-10 h-1.5 bg-gray-200 rounded-full mx-auto mb-3 sm:hidden"></div>
+        <div id="quickview-content"></div>
+    </div>
+
+    <!-- 10. CART & WHATSAPP CHECKOUT BOTTOM SHEET -->
+    <div id="cart-backdrop" onclick="closeCartSheet()" class="fixed inset-0 bg-black/40 z-40 hidden"></div>
+    <div id="cart-sheet" class="fixed bottom-0 left-0 right-0 z-50 max-w-lg mx-auto bg-pastel-bg border-t-2 sm:border-2 border-pastel-ink rounded-t-3xl sm:rounded-3xl sm:bottom-6 p-5 max-h-[85vh] flex flex-col transition-transform duration-200 sheet-exit hidden">
+        <div class="w-10 h-1.5 bg-gray-300 rounded-full mx-auto mb-2 sm:hidden"></div>
+        <div class="flex items-center justify-between pb-3 border-b border-pastel-ink/10">
+            <div>
+                <h3 class="font-extrabold text-base">Keranjang Belanja 🛍️</h3>
+                <p class="text-[11px] text-pastel-muted font-semibold">Cek kembali pesanan skincare kamu</p>
+            </div>
+            <button onclick="closeCartSheet()" class="w-8 h-8 rounded-full bg-white border border-pastel-ink flex items-center justify-center text-xs font-bold">✕</button>
+        </div>
+
+        <!-- Cart Items Scrollable List -->
+        <div id="cart-items-list" class="flex-1 overflow-y-auto py-3 space-y-2.5"></div>
+
+        <!-- Free Gift Progress Bar -->
+        <div id="free-gift-banner" class="bg-pastel-rose/60 border border-pastel-ink rounded-2xl p-2.5 mb-3 text-[11px] font-bold text-center"></div>
+
+        <!-- Checkout Footer -->
+        <div class="pt-3 border-t border-pastel-ink/10 space-y-2.5">
+            <input type="text" id="buyer-name" placeholder="Nama penerima (opsional)" class="w-full px-3.5 py-2 rounded-xl bg-white border border-pastel-ink text-xs font-semibold focus:outline-none">
+            <div class="flex items-center justify-between text-sm font-extrabold px-1">
+                <span>Total Pembayaran</span>
+                <span id="cart-sheet-total" class="text-base text-pink-600">Rp 0</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+                <button onclick="copyOrderToClipboard()" class="pastel-btn bg-pastel-butter py-2.5 rounded-xl text-xs font-extrabold flex items-center justify-center gap-1">
+                    <span>📋 Salin Pesanan</span>
+                </button>
+                <button onclick="sendWhatsAppOrder()" class="pastel-btn bg-pastel-mint py-2.5 rounded-xl text-xs font-extrabold flex items-center justify-center gap-1">
+                    <span>💬 Pesan via WA</span>
+                </button>
             </div>
         </div>
     </div>
 
-    <div class="toast" id="toast">Siap belanja.<small>Katalog Needskincare sudah terbuka.</small></div>
+    <!-- LIGHTWEIGHT TOAST NOTIFICATION -->
+    <div id="toast-box" class="fixed top-14 left-1/2 -translate-x-1/2 z-50 pointer-events-none"></div>
 
+    <!-- JAVASCRIPT: ULTRA-FAST & SELF-CONTAINED -->
     <script>
-        const $ = (selector, parent = document) => parent.querySelector(selector);
-        const $$ = (selector, parent = document) => Array.from(parent.querySelectorAll(selector));
-
-        const body = document.body;
-        const cursor = $('#cursor');
-        const loadingScreen = $('#loadingScreen');
-        const loadingFill = $('#loadingFill');
-        const loaderCaption = $('#loaderCaption');
-        const scrollProgress = $('#scrollProgress');
-        const navLinks = $('#navLinks');
-        const menuButton = $('#menuButton');
-        const chaosButton = $('#chaosButton');
-        const motionButton = $('#motionButton');
-        const toast = $('#toast');
-        const productModal = $('#productModal');
-        const modalTitle = $('#modalTitle');
-        const modalText = $('#modalText');
-        const modalPrice = $('#modalPrice');
-        const modalOrder = $('#modalOrder');
-        const modalClose = $('#modalClose');
-        const brandSlider = $('#brandSlider');
-
-        const colors = ['#ff1493', '#ffe45e', '#52e4ff', '#baff39', '#9c6bff', '#ff9d6c'];
-        const emojis = ['✨', '💖', '🧴', '💄', '🌸', '🫧', '⭐', '🛍️'];
-
-        let cursorX = window.innerWidth / 2;
-        let cursorY = window.innerHeight / 2;
-        let activeProduct = null;
-        let lastSparkle = 0;
-        let motionReduced = false;
-
-        function initLoader() {
-            const captions = [
-                'menyiapkan katalog skincare...',
-                'memuat brand favorit...',
-                'mengecek rekomendasi produk...',
-                'menyusun pilihan best seller...'
-            ];
-
-            let progress = 0;
-            const timer = setInterval(() => {
-                progress += Math.floor(Math.random() * 18) + 7;
-                if (progress >= 100) progress = 100;
-                loadingFill.style.width = progress + '%';
-                loaderCaption.textContent = captions[Math.floor(Math.random() * captions.length)];
-
-                if (progress === 100) {
-                    clearInterval(timer);
-                    setTimeout(() => {
-                        loadingScreen.classList.add('done');
-                        showToast('Katalog siap.', 'Produk favorit sudah bisa kamu lihat.');
-                    }, 360);
-                }
-            }, 130);
-        }
-
-        function createBackgroundDecor() {
-            const orbContainer = document.createDocumentFragment();
-
-            for (let i = 0; i < 12; i++) {
-                const orb = document.createElement('span');
-                orb.className = 'orb';
-                orb.style.setProperty('--size', `${Math.random() * 130 + 70}px`);
-                orb.style.setProperty('--left', `${Math.random() * 100}%`);
-                orb.style.setProperty('--top', `${Math.random() * 100}%`);
-                orb.style.setProperty('--x', `${Math.random() * 120 - 60}px`);
-                orb.style.setProperty('--y', `${Math.random() * 120 - 60}px`);
-                orb.style.setProperty('--speed', `${Math.random() * 6 + 6}s`);
-                orb.style.setProperty('--color', colors[i % colors.length]);
-                orbContainer.appendChild(orb);
+        // All 8 Products from the needskincare repository
+        const PRODUCTS = [
+            {
+                id: 'azarine-spf',
+                name: 'Azarine Hydrasoothe Sunscreen Gel SPF45 PA++++',
+                shortName: 'Azarine Sunscreen SPF45',
+                category: 'Skincare',
+                concern: ['sun', 'barrier'],
+                price: 58000,
+                oldPrice: 65000,
+                rating: '4.9',
+                sold: '2.4rb+',
+                image: 'azarine-ss-50spf.png',
+                badge: 'Best Seller ☀️',
+                bg: 'bg-pastel-mint',
+                desc: 'Tabir surya gel berbahan dasar air yang sangat ringan, dingin, dan mudah meresap untuk seluruh jenis kulit termasuk kulit berminyak & acne-prone.',
+                benefits: ['0% Alkohol & Silicone', 'No Whitecast', 'Ekstrak Propolis & Aloe Vera'],
+                svgFallback: `<svg viewBox="0 0 80 80" class="w-16 h-16"><rect x="24" y="14" width="32" height="44" rx="6" fill="#A7F3D0" stroke="#26232B" stroke-width="2.5"/><rect x="30" y="58" width="20" height="8" rx="2" fill="#FFF" stroke="#26232B" stroke-width="2.5"/><circle cx="40" cy="34" r="8" fill="#FDE047" stroke="#26232B" stroke-width="2"/></svg>`
+            },
+            {
+                id: 'g2g-blueberry',
+                name: 'Glad2Glow Blueberry 5% Ceramide Moisturizer',
+                shortName: 'G2G Blueberry Moisturizer',
+                category: 'Skincare',
+                concern: ['barrier'],
+                price: 42000,
+                oldPrice: 49000,
+                rating: '4.9',
+                sold: '3.1rb+',
+                image: 'g2g-blueberry-mosturizer.png',
+                badge: 'Barrier Hero 🫐',
+                bg: 'bg-pastel-berry',
+                desc: 'Moisturizer dengan ekstrak Blueberry dan 5x Ceramide yang merawat kemerahan, menghidrasi kulit kering, dan menjaga kekuatan skin barrier.',
+                benefits: ['5x Ceramide Complex', 'Tekstur Gel Ringan', 'Menenangkan Kulit Kemerahan'],
+                svgFallback: `<svg viewBox="0 0 80 80" class="w-16 h-16"><rect x="16" y="30" width="48" height="34" rx="10" fill="#C4B5FD" stroke="#26232B" stroke-width="2.5"/><rect x="20" y="20" width="40" height="12" rx="5" fill="#F3E8FF" stroke="#26232B" stroke-width="2.5"/><circle cx="40" cy="47" r="7" fill="#7C3AED"/></svg>`
+            },
+            {
+                id: 'skintific-5x',
+                name: 'Skintific 5X Ceramide Barrier Moisture Gel',
+                shortName: 'Skintific 5X Ceramide',
+                category: 'Skincare',
+                concern: ['barrier'],
+                price: 119000,
+                oldPrice: 139000,
+                rating: '5.0',
+                sold: '1.8rb+',
+                image: 'skintific-ceremide-mos.png',
+                badge: 'Top Moist 💧',
+                bg: 'bg-[#E0F2FE]',
+                desc: 'Pelembap ikonik dengan teknologi 5X Ceramide, Hyaluronic Acid, dan Centella Asiatica untuk memperbaiki skin barrier secara intensif.',
+                benefits: ['Hidrasi 24 Jam', 'Memperkuat Barrier', 'Aman untuk Kulit Sensitif'],
+                svgFallback: `<svg viewBox="0 0 80 80" class="w-16 h-16"><rect x="16" y="30" width="48" height="34" rx="10" fill="#7DD3FC" stroke="#26232B" stroke-width="2.5"/><rect x="20" y="20" width="40" height="12" rx="5" fill="#FFF" stroke="#26232B" stroke-width="2.5"/></svg>`
+            },
+            {
+                id: 'focallure-tint',
+                name: 'Focallure Glassy Glow Watery Lip Tint',
+                shortName: 'Focallure Lip Tint',
+                category: 'Makeup',
+                concern: ['glow-lips'],
+                price: 35000,
+                oldPrice: 45000,
+                rating: '4.8',
+                sold: '1.5rb+',
+                image: 'focallure-liptint.png',
+                badge: 'Viral Lips 💋',
+                bg: 'bg-pastel-rose',
+                desc: 'Lip tint dengan hasil akhir glossy sebening kaca yang melembapkan bibir kering tanpa rasa lengket dan tahan lama seharian.',
+                benefits: ['Stain Tahan Lama', 'Efek Plumpy Glassy', 'Tidak Membuat Bibir Pecah'],
+                svgFallback: `<svg viewBox="0 0 80 80" class="w-16 h-16"><rect x="31" y="14" width="18" height="20" rx="3" fill="#FBCFE8" stroke="#26232B" stroke-width="2.5"/><rect x="29" y="34" width="22" height="34" rx="5" fill="#FB7185" stroke="#26232B" stroke-width="2.5"/></svg>`
+            },
+            {
+                id: 'omg-bundle',
+                name: 'OMG Oh My Glam Peach Glowing & Lip Bundling Set',
+                shortName: 'Paket Glowing OMG Set',
+                category: 'Bundling Set',
+                concern: ['glow-lips', 'sun'],
+                price: 69000,
+                oldPrice: 89000,
+                rating: '4.8',
+                sold: '950+',
+                image: 'OMG-set.png',
+                badge: 'Hemat 25% 🍑',
+                bg: 'bg-pastel-peach',
+                desc: 'Paket lengkap perawatan wajah cerah glowing ekstrak buah Peach ditambah lip cream favorit untuk tampilan segar setiap hari.',
+                benefits: ['Isi Lengkap 1 Paket', 'Mencerahkan Wajah Kusam', 'Harga Super Ekonomis'],
+                svgFallback: `<svg viewBox="0 0 80 80" class="w-16 h-16"><rect x="14" y="24" width="24" height="40" rx="5" fill="#FDBA74" stroke="#26232B" stroke-width="2.5"/><rect x="42" y="32" width="24" height="32" rx="6" fill="#F9A8D4" stroke="#26232B" stroke-width="2.5"/></svg>`
+            },
+            {
+                id: 'wardah-set',
+                name: 'Wardah Perfect Bright Daily Routine Bundling Set',
+                shortName: 'Wardah Perfect Bright Set',
+                category: 'Bundling Set',
+                concern: ['sun', 'glow-lips'],
+                price: 85000,
+                oldPrice: 105000,
+                rating: '4.9',
+                sold: '1.2rb+',
+                image: 'wardah-perfect-set.jpg',
+                badge: 'Paket Cerah ✨',
+                bg: 'bg-[#E0F2FE]',
+                desc: 'Rangkaian lengkap Wardah dengan 4X Bright Berries untuk wajah tampak cerah merona, bersih, dan bebas kilap seharian.',
+                benefits: ['Halal & Teruji Dermatologi', '4X Bright Berries', 'Cocok untuk Pemula'],
+                svgFallback: `<svg viewBox="0 0 80 80" class="w-16 h-16"><rect x="14" y="20" width="24" height="44" rx="5" fill="#93C5FD" stroke="#26232B" stroke-width="2.5"/><rect x="42" y="28" width="24" height="36" rx="6" fill="#BAE6FD" stroke="#26232B" stroke-width="2.5"/></svg>`
+            },
+            {
+                id: 'makarizo-set',
+                name: 'Makarizo Hair Energy Creambath & Vitamin Set',
+                shortName: 'Makarizo Hair Spa Set',
+                category: 'Hair & Body',
+                concern: ['body-hair'],
+                price: 54000,
+                oldPrice: 64000,
+                rating: '4.9',
+                sold: '1.1rb+',
+                image: 'makarizo-set.png',
+                badge: 'Hair Goals 💇‍♀️',
+                bg: 'bg-pastel-butter',
+                desc: 'Paket perawatan rambut lembut dan wangi salon di rumah. Menutrisi rambut kering, bercabang, dan rontok.',
+                benefits: ['Wangi Tahan Lama', 'Keratin & Omega 6', 'Rambut Halus Seketika'],
+                svgFallback: `<svg viewBox="0 0 80 80" class="w-16 h-16"><rect x="18" y="26" width="44" height="38" rx="8" fill="#FDE047" stroke="#26232B" stroke-width="2.5"/><rect x="24" y="18" width="32" height="10" rx="4" fill="#F97316" stroke="#26232B" stroke-width="2.5"/></svg>`
+            },
+            {
+                id: 'purbasari-set',
+                name: 'Purbasari Lulur Mandi & Brightening Body Care Set',
+                shortName: 'Purbasari Body Care Set',
+                category: 'Hair & Body',
+                concern: ['body-hair'],
+                price: 49000,
+                oldPrice: 59000,
+                rating: '4.8',
+                sold: '1.4rb+',
+                image: 'purbasari-set.png',
+                badge: 'Body Glow 🛁',
+                bg: 'bg-pastel-mint',
+                desc: 'Paket lulur mandi legendaris dan body care pencerah dengan butiran scrub lembut untuk mengangkat sel kulit mati secara optimal.',
+                benefits: ['Ekstrak Bengkoang & Susu', 'Kulit Halus & Cerah', 'Aroma Menenangkan'],
+                svgFallback: `<svg viewBox="0 0 80 80" class="w-16 h-16"><circle cx="40" cy="44" r="22" fill="#A7F3D0" stroke="#26232B" stroke-width="2.5"/><rect x="26" y="16" width="28" height="10" rx="4" fill="#FFF" stroke="#26232B" stroke-width="2.5"/></svg>`
             }
+        ];
 
-            for (let i = 0; i < 14; i++) {
-                const emoji = document.createElement('span');
-                emoji.className = 'floating-emoji';
-                emoji.textContent = emojis[i % emojis.length];
-                emoji.style.setProperty('--size', `${Math.random() * 18 + 22}px`);
-                emoji.style.setProperty('--left', `${Math.random() * 100}%`);
-                emoji.style.setProperty('--top', `${Math.random() * 100}%`);
-                emoji.style.setProperty('--y', `${Math.random() * -60 - 24}px`);
-                emoji.style.setProperty('--r', `${Math.random() * 60 - 30}deg`);
-                emoji.style.setProperty('--speed', `${Math.random() * 7 + 5}s`);
-                orbContainer.appendChild(emoji);
-            }
+        // App State
+        let activeCategory = 'all';
+        let activeConcern = null;
+        let searchQuery = '';
+        let sortMode = 'popular';
+        let cart = [
+            { id: 'g2g-blueberry', qty: 1 }
+        ];
 
-            document.body.appendChild(orbContainer);
-        }
+        const formatIDR = (val) => 'Rp ' + val.toLocaleString('id-ID');
 
-        function initCursor() {
-            const trails = [];
-            for (let i = 0; i < 12; i++) {
-                const dot = document.createElement('span');
-                dot.className = 'cursor-trail';
-                document.body.appendChild(dot);
-                trails.push({
-                    el: dot,
-                    x: cursorX,
-                    y: cursorY
-                });
-            }
-
-            window.addEventListener('mousemove', (event) => {
-                cursorX = event.clientX;
-                cursorY = event.clientY;
-
-                const now = Date.now();
-                if (now - lastSparkle > 58 && !motionReduced) {
-                    makeSparkle(cursorX, cursorY, 1);
-                    lastSparkle = now;
-                }
+        // Render Product Catalog Grid
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            let list = PRODUCTS.filter(p => {
+                const matchCat = activeCategory === 'all' || p.category === activeCategory;
+                const matchConcern = !activeConcern || p.concern.includes(activeConcern);
+                const matchSearch = !searchQuery || 
+                    p.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                    p.category.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchCat && matchConcern && matchSearch;
             });
 
-            const animate = () => {
-                cursor.style.left = `${cursorX}px`;
-                cursor.style.top = `${cursorY}px`;
+            if (sortMode === 'price-asc') list.sort((a, b) => a.price - b.price);
+            if (sortMode === 'price-desc') list.sort((a, b) => b.price - a.price);
 
-                let x = cursorX;
-                let y = cursorY;
+            document.getElementById('product-count-badge').textContent = `${list.length} Produk`;
 
-                trails.forEach((trail, index) => {
-                    trail.x += (x - trail.x) * 0.22;
-                    trail.y += (y - trail.y) * 0.22;
-                    trail.el.style.left = `${trail.x}px`;
-                    trail.el.style.top = `${trail.y}px`;
-                    trail.el.style.opacity = `${0.55 - index * 0.035}`;
-                    trail.el.style.transform = `translate(-50%, -50%) scale(${1 - index * 0.045})`;
-                    x = trail.x;
-                    y = trail.y;
-                });
+            if (list.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full bg-white border border-pastel-ink rounded-3xl p-8 text-center space-y-2">
+                        <div class="text-3xl">🔍</div>
+                        <h3 class="font-extrabold text-sm">Produk tidak ditemukan</h3>
+                        <p class="text-xs text-pastel-muted">Coba kata kunci lain atau reset filter kategori ya!</p>
+                        <button onclick="resetAllFilters()" class="pastel-btn bg-pastel-rose px-4 py-1.5 rounded-full text-xs font-extrabold mt-2">Tampilkan Semua</button>
+                    </div>
+                `;
+                return;
+            }
 
-                requestAnimationFrame(animate);
+            grid.innerHTML = list.map(p => {
+                const inCart = cart.find(item => item.id === p.id);
+                return `
+                    <article class="pastel-card bg-white rounded-2xl p-2.5 sm:p-3.5 flex flex-col justify-between">
+                        <div>
+                            <!-- Product Image Box -->
+                            <div onclick="openQuickView('${p.id}')" class="${p.bg} border border-pastel-ink rounded-xl h-36 sm:h-44 relative flex items-center justify-center p-3 cursor-pointer overflow-hidden group">
+                                <span class="absolute top-2 left-2 bg-white/95 border border-pastel-ink text-[10px] font-extrabold px-2 py-0.5 rounded-full z-10">
+                                    ${p.badge}
+                                </span>
+                                <img src="${p.image}" alt="${p.shortName}" loading="lazy"
+                                     onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                                     class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-200">
+                                <div class="hidden flex items-center justify-center">${p.svgFallback}</div>
+                            </div>
+
+                            <!-- Meta Info -->
+                            <div class="mt-2.5 space-y-1">
+                                <div class="flex items-center justify-between text-[10px] font-bold text-pastel-muted">
+                                    <span>${p.category}</span>
+                                    <span class="flex items-center gap-0.5 text-amber-500 font-extrabold">★ ${p.rating} <span class="text-pastel-muted font-medium">(${p.sold})</span></span>
+                                </div>
+                                <h3 onclick="openQuickView('${p.id}')" class="font-extrabold text-xs sm:text-sm leading-snug line-clamp-2 cursor-pointer hover:text-pink-600">
+                                    ${p.name}
+                                </h3>
+                            </div>
+                        </div>
+
+                        <!-- Price & Fast Add Button -->
+                        <div class="mt-3 pt-2 border-t border-pastel-ink/10 flex items-center justify-between gap-1">
+                            <div>
+                                <span class="text-[10px] text-pastel-muted line-through block leading-none">${formatIDR(p.oldPrice)}</span>
+                                <span class="font-extrabold text-xs sm:text-sm text-pastel-ink">${formatIDR(p.price)}</span>
+                            </div>
+                            <button onclick="addToCart('${p.id}')" class="pastel-btn ${inCart ? 'bg-pastel-mint' : 'bg-pastel-rose hover:bg-pastel-roseDark'} px-2.5 py-1.5 rounded-xl text-[11px] font-extrabold flex items-center gap-1 shrink-0">
+                                <span>${inCart ? `+Keranjang (${inCart.qty})` : '+ Beli'}</span>
+                            </button>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        // Category & Skin Concern Filters
+        function selectCategory(cat) {
+            activeCategory = cat;
+            document.querySelectorAll('.cat-pill').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.className = 'cat-pill pastel-btn bg-pastel-ink text-white px-3.5 py-1.5 rounded-full text-xs font-extrabold shrink-0';
+                } else {
+                    btn.className = 'cat-pill pastel-btn bg-white px-3.5 py-1.5 rounded-full text-xs font-extrabold shrink-0';
+                }
+            });
+            renderProducts();
+        }
+
+        function selectConcern(concern) {
+            activeConcern = activeConcern === concern ? null : concern;
+            const noteBox = document.getElementById('concern-recommendation-note');
+            const noteText = document.getElementById('concern-note-text');
+            const resetBtn = document.getElementById('reset-concern-btn');
+
+            const labels = {
+                'barrier': '💧 Rekomendasi Pelembap & Perbaikan Skin Barrier:',
+                'sun': '☀️ Rekomendasi Proteksi UV & Pencerah Wajah Kusam:',
+                'glow-lips': '💄 Rekomendasi Paket Glowing Hemat & Bibir Plumpy:',
+                'body-hair': '🛁 Rekomendasi Perawatan Rambut & Badan di Rumah:'
             };
 
-            animate();
-
-            $$('a, button, .tilt, details').forEach((el) => {
-                el.addEventListener('mouseenter', () => cursor.classList.add('active'));
-                el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
+            document.querySelectorAll('.concern-btn').forEach(btn => {
+                if (btn.dataset.concern === activeConcern) {
+                    btn.classList.add('ring-2', 'ring-pastel-ink', 'bg-pastel-butter');
+                    btn.classList.remove('bg-white');
+                } else {
+                    btn.classList.remove('ring-2', 'ring-pastel-ink', 'bg-pastel-butter');
+                    btn.classList.add('bg-white');
+                }
             });
+
+            if (activeConcern) {
+                noteText.textContent = labels[activeConcern];
+                noteBox.classList.remove('hidden');
+                resetBtn.classList.remove('hidden');
+            } else {
+                noteBox.classList.add('hidden');
+                resetBtn.classList.add('hidden');
+            }
+            renderProducts();
         }
 
-        function makeSparkle(x, y, amount = 8) {
-            if (motionReduced) return;
-            for (let i = 0; i < amount; i++) {
-                const sparkle = document.createElement('span');
-                sparkle.className = 'sparkle';
-                sparkle.style.left = `${x}px`;
-                sparkle.style.top = `${y}px`;
-                sparkle.style.setProperty('--spark-color', colors[Math.floor(Math.random() * colors.length)]);
-                sparkle.style.setProperty('--dx', `${Math.random() * 86 - 43}px`);
-                sparkle.style.setProperty('--dy', `${Math.random() * 86 - 43}px`);
-                document.body.appendChild(sparkle);
-                setTimeout(() => sparkle.remove(), 760);
+        function handleSearch(val) {
+            searchQuery = val.trim();
+            renderProducts();
+        }
+
+        function clearSearch() {
+            searchQuery = '';
+            document.getElementById('mobile-search-input').value = '';
+            const deskInput = document.getElementById('desktop-search');
+            if (deskInput) deskInput.value = '';
+            renderProducts();
+        }
+
+        function handleSort(val) {
+            sortMode = val;
+            renderProducts();
+        }
+
+        function resetAllFilters() {
+            activeCategory = 'all';
+            activeConcern = null;
+            clearSearch();
+            selectCategory('all');
+            selectConcern(null);
+        }
+
+        function toggleMobileSearch() {
+            const bar = document.getElementById('mobile-search-bar');
+            bar.classList.toggle('hidden');
+            if (!bar.classList.contains('hidden')) {
+                document.getElementById('mobile-search-input').focus();
             }
         }
 
-        function createConfetti(total = 40) {
-            if (motionReduced) return;
-            for (let i = 0; i < total; i++) {
-                const piece = document.createElement('span');
-                piece.className = 'confetti';
-                piece.style.left = `${Math.random() * 100}vw`;
-                piece.style.setProperty('--confetti-color', colors[Math.floor(Math.random() * colors.length)]);
-                piece.style.setProperty('--duration', `${Math.random() * 2.2 + 2.2}s`);
-                piece.style.setProperty('--drift', `${Math.random() * 220 - 110}px`);
-                piece.style.transform = `rotate(${Math.random() * 360}deg)`;
-                document.body.appendChild(piece);
-                setTimeout(() => piece.remove(), 5200);
+        // Quick View Bottom Sheet
+        function openQuickView(productId) {
+            const p = PRODUCTS.find(item => item.id === productId);
+            if (!p) return;
+
+            const content = document.getElementById('quickview-content');
+            content.innerHTML = `
+                <div class="flex gap-3.5 items-center">
+                    <div class="${p.bg} border border-pastel-ink rounded-2xl w-24 h-24 p-2 flex items-center justify-center shrink-0">
+                        <img src="${p.image}" alt="${p.shortName}" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" class="max-h-full object-contain">
+                        <div class="hidden">${p.svgFallback}</div>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-[10px] font-extrabold bg-pastel-butter px-2 py-0.5 rounded-full border border-pastel-ink">${p.badge}</span>
+                        <h3 class="font-extrabold text-sm sm:text-base leading-snug">${p.name}</h3>
+                        <div class="flex items-center gap-2">
+                            <span class="font-extrabold text-base text-pink-600">${formatIDR(p.price)}</span>
+                            <span class="text-xs text-pastel-muted line-through">${formatIDR(p.oldPrice)}</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-xs text-pastel-muted font-medium leading-relaxed mt-3">${p.desc}</p>
+                <div class="mt-3 flex flex-wrap gap-1.5">
+                    ${p.benefits.map(b => `<span class="text-[10px] font-bold bg-pastel-mint/70 border border-pastel-ink/30 px-2.5 py-1 rounded-full">✓ ${b}</span>`).join('')}
+                </div>
+                <div class="mt-4 pt-3 border-t border-pastel-ink/10 flex gap-2">
+                    <button onclick="closeQuickView()" class="px-4 py-2.5 rounded-xl border border-pastel-ink text-xs font-extrabold">Tutup</button>
+                    <button onclick="addToCart('${p.id}'); closeQuickView();" class="flex-1 pastel-btn bg-pastel-rose py-2.5 rounded-xl text-xs font-extrabold">
+                        + Tambah ke Keranjang (${formatIDR(p.price)})
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('quickview-backdrop').classList.remove('hidden');
+            const sheet = document.getElementById('quickview-sheet');
+            sheet.classList.remove('hidden', 'sheet-exit');
+            sheet.classList.add('sheet-enter');
+        }
+
+        function closeQuickView() {
+            const sheet = document.getElementById('quickview-sheet');
+            sheet.classList.remove('sheet-enter');
+            sheet.classList.add('sheet-exit');
+            setTimeout(() => {
+                sheet.classList.add('hidden');
+                document.getElementById('quickview-backdrop').classList.add('hidden');
+            }, 180);
+        }
+
+        // Cart Management
+        function addToCart(productId) {
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ id: productId, qty: 1 });
             }
+            const p = PRODUCTS.find(item => item.id === productId);
+            updateCartUI();
+            renderProducts();
+            showToast(`✨ ${p.shortName} ditambahkan!`);
         }
 
-        function emojiRain(total = 30) {
-            if (motionReduced) return;
-            for (let i = 0; i < total; i++) {
-                const drop = document.createElement('span');
-                drop.className = 'confetti';
-                drop.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-                drop.style.width = 'auto';
-                drop.style.height = 'auto';
-                drop.style.border = '0';
-                drop.style.background = 'transparent';
-                drop.style.fontSize = `${Math.random() * 22 + 18}px`;
-                drop.style.left = `${Math.random() * 100}vw`;
-                drop.style.setProperty('--duration', `${Math.random() * 2 + 2}s`);
-                drop.style.setProperty('--drift', `${Math.random() * 200 - 100}px`);
-                document.body.appendChild(drop);
-                setTimeout(() => drop.remove(), 5200);
-            }
+        function changeQty(productId, delta) {
+            const idx = cart.findIndex(item => item.id === productId);
+            if (idx === -1) return;
+            cart[idx].qty += delta;
+            if (cart[idx].qty <= 0) cart.splice(idx, 1);
+            updateCartUI();
+            renderProducts();
         }
 
-        function showToast(title, caption = 'Interaction completed.') {
-            toast.innerHTML = `${title}<small>${caption}</small>`;
-            toast.classList.add('show');
-            clearTimeout(showToast.timer);
-            showToast.timer = setTimeout(() => toast.classList.remove('show'), 2800);
-        }
+        function updateCartUI() {
+            let totalQty = 0;
+            let totalPrice = 0;
 
-        function updateScrollProgress() {
-            const scrollTop = window.scrollY;
-            const height = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = height > 0 ? (scrollTop / height) * 100 : 0;
-            scrollProgress.style.width = `${progress}%`;
-        }
-
-        function initReveal() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const index = [...entry.target.parentNode.children].indexOf(entry.target);
-                        entry.target.style.transitionDelay = `${Math.min(index * 65, 360)}ms`;
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.16
-            });
-
-            $$('.reveal').forEach((el) => observer.observe(el));
-        }
-
-        function initCounters() {
-            const counters = $$('[data-count]');
-            const counterObserver = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (!entry.isIntersecting) return;
-
-                    const el = entry.target;
-                    const target = Number(el.dataset.count);
-                    const duration = 950;
-                    const start = performance.now();
-
-                    function tick(now) {
-                        const progress = Math.min((now - start) / duration, 1);
-                        const eased = 1 - Math.pow(1 - progress, 3);
-                        el.textContent = Math.floor(eased * target) + (target === 100 ? '%' : target === 24 ? 'H' : '+');
-
-                        if (progress < 1) requestAnimationFrame(tick);
-                    }
-
-                    requestAnimationFrame(tick);
-                    counterObserver.unobserve(el);
-                });
-            }, {
-                threshold: 0.6
-            });
-
-            counters.forEach((counter) => counterObserver.observe(counter));
-        }
-
-        function initTilt() {
-            $$('.tilt').forEach((card) => {
-                card.addEventListener('mousemove', (event) => {
-                    if (window.innerWidth < 768 || motionReduced) return;
-                    const rect = card.getBoundingClientRect();
-                    const x = event.clientX - rect.left;
-                    const y = event.clientY - rect.top;
-                    const rotateX = ((y / rect.height) - .5) * -10;
-                    const rotateY = ((x / rect.width) - .5) * 10;
-                    card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-                });
-
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = '';
-                });
-            });
-        }
-
-        function initMagneticButtons() {
-            $$('.magnetic').forEach((button) => {
-                button.addEventListener('mousemove', (event) => {
-                    if (window.innerWidth < 768 || motionReduced) return;
-                    const rect = button.getBoundingClientRect();
-                    const x = event.clientX - rect.left - rect.width / 2;
-                    const y = event.clientY - rect.top - rect.height / 2;
-                    button.style.transform = `translate(${x * .18}px, ${y * .18}px)`;
-                });
-
-                button.addEventListener('mouseleave', () => {
-                    button.style.transform = '';
-                });
-            });
-        }
-
-        function initHeroLetters() {
-            return;
-            const title = $('#heroTitle');
-            const original = title.innerHTML;
-
-            const temp = document.createElement('div');
-            temp.innerHTML = original;
-
-            function wrapText(node, counter = {
-                value: 0
-            }) {
-                if (node.nodeType === Node.TEXT_NODE) {
-                    return node.textContent.split('').map(char => {
-                        if (char === ' ') return ' ';
-                        const span = document.createElement('span');
-                        span.className = 'letter';
-                        span.style.setProperty('--i', counter.value++);
-                        span.textContent = char;
-                        return span.outerHTML;
-                    }).join('');
+            cart.forEach(item => {
+                const p = PRODUCTS.find(prod => prod.id === item.id);
+                if (p) {
+                    totalQty += item.qty;
+                    totalPrice += p.price * item.qty;
                 }
+            });
 
-                if (node.nodeType === Node.ELEMENT_NODE) {
-                    const attrs = Array.from(node.attributes).map(attr => `${attr.name}="${attr.value}"`).join(' ');
-                    const children = Array.from(node.childNodes).map(child => wrapText(child, counter)).join('');
-                    return `<${node.tagName.toLowerCase()} ${attrs}>${children}</${node.tagName.toLowerCase()}>`;
-                }
+            document.getElementById('header-cart-count').textContent = totalQty;
+            document.getElementById('bottom-nav-badge').textContent = totalQty;
+            document.getElementById('floating-qty').textContent = totalQty;
+            document.getElementById('floating-total').textContent = formatIDR(totalPrice);
+            document.getElementById('cart-sheet-total').textContent = formatIDR(totalPrice);
 
-                return '';
+            const floatingBar = document.getElementById('floating-cart-bar');
+            if (totalQty > 0) {
+                floatingBar.classList.remove('hidden');
+            } else {
+                floatingBar.classList.add('hidden');
             }
 
-            title.innerHTML = Array.from(temp.childNodes).map(node => wrapText(node)).join('');
+            // Free Gift Progress
+            const giftBanner = document.getElementById('free-gift-banner');
+            const minFreeGift = 100000;
+            if (totalPrice >= minFreeGift) {
+                giftBanner.innerHTML = `🎉 Yeay! Kamu dapat <strong>Gratis Ongkir + 1 Sheet Mask</strong>!`;
+            } else {
+                const kurang = minFreeGift - totalPrice;
+                giftBanner.innerHTML = `Tambah <strong>${formatIDR(kurang)}</strong> lagi untuk Gratis Ongkir + Sheet Mask! 🌸`;
+            }
+
+            // Render Cart Sheet List
+            const listEl = document.getElementById('cart-items-list');
+            if (cart.length === 0) {
+                listEl.innerHTML = `<div class="py-8 text-center text-xs text-pastel-muted font-bold">Keranjangmu masih kosong nih 🌷</div>`;
+                return;
+            }
+
+            listEl.innerHTML = cart.map(item => {
+                const p = PRODUCTS.find(prod => prod.id === item.id);
+                return `
+                    <div class="bg-white border border-pastel-ink rounded-2xl p-2.5 flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-2.5 min-w-0">
+                            <div class="${p.bg} w-11 h-11 rounded-xl border border-pastel-ink p-1 flex items-center justify-center shrink-0">
+                                <img src="${p.image}" alt="" onerror="this.style.display='none'" class="max-h-full object-contain">
+                            </div>
+                            <div class="min-w-0">
+                                <h4 class="text-xs font-extrabold truncate">${p.shortName}</h4>
+                                <span class="text-xs font-bold text-pink-600">${formatIDR(p.price * item.qty)}</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-pastel-bg border border-pastel-ink rounded-full px-2 py-0.5 shrink-0">
+                            <button onclick="changeQty('${p.id}', -1)" class="text-xs font-extrabold px-1">-</button>
+                            <span class="text-xs font-extrabold">${item.qty}</span>
+                            <button onclick="changeQty('${p.id}', 1)" class="text-xs font-extrabold px-1">+</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
         }
 
-        function scrambleText(element, finalText) {
-            const chars = '✦✧✹♡!<>-_\\/[]{}—=+*^?#________';
-            let frame = 0;
-            const totalFrames = 32;
-            clearInterval(scrambleText.timer);
-
-            scrambleText.timer = setInterval(() => {
-                const progress = frame / totalFrames;
-                element.textContent = finalText.split('').map((letter, index) => {
-                    if (index < finalText.length * progress) return letter;
-                    if (letter === ' ') return ' ';
-                    return chars[Math.floor(Math.random() * chars.length)];
-                }).join('');
-
-                frame++;
-                if (frame > totalFrames) {
-                    clearInterval(scrambleText.timer);
-                    element.textContent = finalText;
-                }
-            }, 36);
+        function openCartSheet() {
+            document.getElementById('cart-backdrop').classList.remove('hidden');
+            const sheet = document.getElementById('cart-sheet');
+            sheet.classList.remove('hidden', 'sheet-exit');
+            sheet.classList.add('sheet-enter');
         }
 
-        function initNavigation() {
-            menuButton.addEventListener('click', () => {
-                navLinks.classList.toggle('open');
-            });
-
-            $$('#navLinks a').forEach((link) => {
-                link.addEventListener('click', () => navLinks.classList.remove('open'));
-            });
-
-            const sections = $$('main section[id]');
-            const navItems = $$('#navLinks a');
-
-            const navObserver = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (!entry.isIntersecting) return;
-                    const id = entry.target.getAttribute('id');
-                    navItems.forEach((link) => {
-                        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-                    });
-                });
-            }, {
-                rootMargin: '-42% 0px -52% 0px'
-            });
-
-            sections.forEach((section) => navObserver.observe(section));
+        function closeCartSheet() {
+            const sheet = document.getElementById('cart-sheet');
+            sheet.classList.remove('sheet-enter');
+            sheet.classList.add('sheet-exit');
+            setTimeout(() => {
+                sheet.classList.add('hidden');
+                document.getElementById('cart-backdrop').classList.add('hidden');
+            }, 180);
         }
 
-        function initProductInteractions() {
-            $$('.pill-filter').forEach((filter) => {
-                filter.addEventListener('click', () => {
-                    $$('.pill-filter').forEach((btn) => btn.classList.remove('active'));
-                    filter.classList.add('active');
-
-                    const selected = filter.dataset.filter;
-                    $$('.product-card').forEach((card, index) => {
-                        const match = selected === 'all' || card.dataset.category === selected;
-                        card.style.display = match ? '' : 'none';
-                        if (match) {
-                            card.style.animation = 'none';
-                            card.offsetHeight;
-                            card.style.animation = `modalPop .32s ease ${index * 35}ms both`;
-                        }
-                    });
-
-                    showToast('Filter produk aktif.', selected === 'all' ? 'Semua produk ditampilkan.' : `Menampilkan kategori ${selected}.`);
-                });
+        function buildOrderText() {
+            const name = document.getElementById('buyer-name').value.trim() || 'Kakak Cantik';
+            let total = 0;
+            const lines = cart.map((item, idx) => {
+                const p = PRODUCTS.find(prod => prod.id === item.id);
+                const sub = p.price * item.qty;
+                total += sub;
+                return `${idx + 1}. ${p.shortName} (x${item.qty}) = ${formatIDR(sub)}`;
             });
-
-            $$('.quick-view').forEach((button) => {
-                button.addEventListener('click', () => {
-                    const card = button.closest('.product-card');
-                    const name = card.dataset.name;
-                    const price = card.dataset.price;
-                    const tag = card.dataset.tag;
-
-                    activeProduct = {
-                        name,
-                        price
-                    };
-                    modalTitle.textContent = name;
-                    modalText.textContent = `Kategori: ${tag}. Produk ini termasuk best seller dan bisa langsung dipesan lewat WhatsApp admin Needskincare.`;
-                    modalPrice.textContent = `Rp ${price}`;
-                    productModal.classList.add('active');
-                    productModal.setAttribute('aria-hidden', 'false');
-                });
-            });
-
-            modalClose.addEventListener('click', closeModal);
-            productModal.addEventListener('click', (event) => {
-                if (event.target === productModal) closeModal();
-            });
-
-            window.addEventListener('keydown', (event) => {
-                if (event.key === 'Escape') closeModal();
-            });
-
-            modalOrder.addEventListener('click', () => {
-                if (!activeProduct) return;
-                order(activeProduct.name, activeProduct.price);
-            });
+            const bonus = total >= 100000 ? '\n🎁 Bonus: Gratis Ongkir & Sheet Mask' : '';
+            return `Halo Admin *needskincare* ✨\nSaya *${name}* mau pesan:\n\n${lines.join('\n')}${bonus}\n\n*Total: ${formatIDR(total)}*\nMohon info pembayarannya ya, terima kasih! 🌸`;
         }
 
-        function closeModal() {
-            productModal.classList.remove('active');
-            productModal.setAttribute('aria-hidden', 'true');
+        function copyOrderToClipboard() {
+            if (cart.length === 0) {
+                showToast('Pilih produk dulu yuk!');
+                return;
+            }
+            const temp = document.createElement('textarea');
+            temp.value = buildOrderText();
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            temp.remove();
+            showToast('📋 Rincian pesanan berhasil disalin!');
         }
 
-        function initMotionControls() {
-            if (chaosButton) chaosButton.addEventListener('click', () => {
-                body.classList.toggle('chaos');
-                const active = body.classList.contains('chaos');
-                showToast(active ? 'Mode warna aktif.' : 'Mode warna mati.', active ? 'Tampilan dibuat lebih ekspresif.' : 'Kembali ke tampilan normal.');
-            });
-
-            if (motionButton) motionButton.addEventListener('click', () => {
-                motionReduced = !motionReduced;
-                body.classList.toggle('reduce-motion', motionReduced);
-                motionButton.innerHTML = motionReduced ?
-                    '<i class="fas fa-eye-slash"></i> <span>Motion</span>' :
-                    '<i class="fas fa-eye"></i> <span>Motion</span>';
-                showToast(motionReduced ? 'Animasi dikurangi.' : 'Animasi dinyalakan lagi.', motionReduced ? 'Gerakan halaman dibuat lebih tenang.' : 'Gerakan halus aktif kembali.');
-            });
+        function sendWhatsAppOrder() {
+            if (cart.length === 0) {
+                showToast('Keranjang masih kosong!');
+                return;
+            }
+            const text = encodeURIComponent(buildOrderText());
+            window.open(`https://wa.me/?text=${text}`, '_blank');
         }
 
-        function initClickDelight() {
-            const targets = '.btn-primary, .btn-secondary, .btn-wa, .quick-view, .pill-filter, .mini-action, .nav-cta, .nav-btn';
-
-            document.addEventListener('click', (event) => {
-                const target = event.target.closest(targets);
-                if (!target || motionReduced) return;
-
-                const rect = target.getBoundingClientRect();
-                const x = event.clientX || rect.left + rect.width / 2;
-                const y = event.clientY || rect.top + rect.height / 2;
-
-                makeSparkle(x, y, 14);
-
-                if (target.matches('.btn-wa, .quick-view, .pill-filter, .mini-action')) {
-                    emojiRain(10);
-                }
-            });
+        function showToast(msg) {
+            const box = document.getElementById('toast-box');
+            const item = document.createElement('div');
+            item.className = 'bg-pastel-ink text-white text-xs font-extrabold px-3.5 py-2 rounded-full shadow-md mb-1.5';
+            item.textContent = msg;
+            box.appendChild(item);
+            setTimeout(() => item.remove(), 2000);
         }
 
-        function initAutoScrollBrand() {
-            if (!brandSlider) return;
-            let direction = 1;
-            setInterval(() => {
-                if (document.hidden || motionReduced) return;
-                const max = brandSlider.scrollWidth - brandSlider.clientWidth;
-                if (brandSlider.scrollLeft >= max - 2) direction = -1;
-                if (brandSlider.scrollLeft <= 2) direction = 1;
-                brandSlider.scrollLeft += direction * 1.2;
-            }, 24);
-        }
-
-        function sideScroll(id, direction) {
-            const el = document.getElementById(id);
-            if (!el) return;
-            const step = 280;
-            el.scrollBy({
-                left: direction === 'left' ? -step : step,
-                behavior: 'smooth'
-            });
-        }
-
-        function order(name, price) {
-            const text = `Halo Admin Needskincare! ✨\nSaya tertarik untuk pesan:\n\nProduk: ${name}\nHarga: Rp ${price}\n\nMohon info selanjutnya ya min! ❤️`;
-            const msg = encodeURIComponent(text);
-            showToast('Redirect ke WhatsApp.', `${name} sudah disiapkan di pesan.`);
-            window.open(`https://wa.me/6281293696614?text=${msg}`, '_blank');
-        }
-
-        function initImageFallback() {
-            $$('img').forEach((img) => {
-                img.addEventListener('error', () => {
-                    const fallback = document.createElement('div');
-                    fallback.style.cssText = `
-            display:grid;
-            place-items:center;
-            width:100%;
-            height:100%;
-            min-height:90px;
-            border:3px dashed #1c1117;
-            border-radius:18px;
-            background:#ffd1e8;
-            color:#1c1117;
-            font-weight:950;
-            text-align:center;
-            padding:10px;
-          `;
-                    fallback.textContent = img.alt || 'Image';
-                    img.replaceWith(fallback);
-                }, {
-                    once: true
-                });
-            });
-        }
-
-        function initParallax() {
-            window.addEventListener('scroll', () => {
-                if (motionReduced) return;
-                const y = window.scrollY;
-                $$('.floating-emoji').forEach((emoji, index) => {
-                    emoji.style.translate = `0 ${Math.sin(y / 180 + index) * 10}px`;
-                });
-                $$('.orb').forEach((orb, index) => {
-                    orb.style.rotate = `${(y / 45 + index * 20) % 360}deg`;
-                });
-            }, {
-                passive: true
-            });
-        }
-
-        window.addEventListener('scroll', updateScrollProgress, {
-            passive: true
-        });
-        window.addEventListener('resize', updateScrollProgress);
-
-        document.addEventListener('DOMContentLoaded', () => {
-            initLoader();
-            initHeroLetters();
-            initReveal();
-            initCounters();
-            initTilt();
-            initMagneticButtons();
-            initNavigation();
-            initProductInteractions();
-            initMotionControls();
-            initClickDelight();
-            initAutoScrollBrand();
-            initImageFallback();
-            updateScrollProgress();
+        // Init
+        window.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            updateCartUI();
         });
     </script>
 </body>
-
 </html>
